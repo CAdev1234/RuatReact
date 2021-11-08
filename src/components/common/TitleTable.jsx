@@ -18,7 +18,7 @@ const TitleTable = () => {
     return (
         <>
             <div className="flex flex-col">
-                <div className="w-full mx-auto mt-5 flex items-center justify-between flex-wrap gap-y-5">
+                <div className="w-full mx-auto mt-5 flex items-center flex-wrap gap-x-5 gap-y-5">
                     {title_li.map((item, index) => {
                         return <div 
                                     key={`submenu_${index}`} 
@@ -37,12 +37,15 @@ const TitleTable = () => {
                     })}
                 </div>
 
-                <div className="mt-14 flex items-center
+                <div className="mt-14 items-center
+                                block lg:flex
                                 text-black dark:text-white">
                     <div className="font-semibold text-2xl">Heading Title</div>
                     <div className="mr-9 ml-24 w-0.5 h-7_5
+                                    hidden lg:block
                                     bg-c_BCC3CF dark:bg-dark_0fc9f2"></div>
-                    <div className="flex items-center">
+                    <div className="flex items-center flex-wrap gap-y-3
+                                    mt-3 lg:mt-0">
                         {category_li.map((item, index) => {
                             return <div key={`submenu_${index}`} className={`h-7_5 w-28 flex justify-center items-center text-sm ${index === 0 ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white rounded-r-full rounded-l-full shadow-card' : 'bg-transparent dark:text-white font-semibold'}`}>{item}</div>
                         })}
@@ -50,83 +53,46 @@ const TitleTable = () => {
                 </div>
 
                 {/* table part */}
-                <div className="mt-5
-                            text-black dark:text-white">
-                    <div className="flex items-center w-full text-xs font-bold py-4">
-                        <div className="flex items-center pl-5" style={{width: '7%'}}>
-                            <div>#</div>
-                            <FaCaretUp className="ml-1"/>
-                        </div>
-                        <div className="" style={{width: '10%'}}>Name</div>
-                        <div className="text-right" style={{width: '10%'}}>Pairs</div>
-                        <div className="text-center" style={{width: '10%'}}>Avg. Price</div>
-                        <div className="text-right" style={{width: '10%'}}>Ttl. Vol</div>
-                        <div className="text-right" style={{width: '10%'}}>Ttl. Vol %</div>
-                        <div className="flex items-center justify-center" style={{width: '15%'}}>
-                            <div>Confidence</div>
-                            <div className="w-4 h-4 rounded-full text-white flex justify-center items-center ml-2 cursor-pointer
-                                            bg-c_BCC3CF dark:bg-dark_0fc9f2">
-                                <BsInfo className="text-white" />
+                <div className="overflow-x-auto w-full">
+                    <div className="mt-5
+                                text-black dark:text-white"
+                        style={{width: 1050}}>
+                        <div className="flex items-center w-full text-xs font-bold py-4">
+                            <div className="flex items-center pl-5" style={{width: '7%'}}>
+                                <div>#</div>
+                                <FaCaretUp className="ml-1"/>
                             </div>
-                        </div>
-                        <div className="flex items-center" style={{width: '7%'}}>
-                            <div className="ml-auto flex-1">Liquidity</div>
-                            <div className="w-4 h-4 rounded-full text-white flex justify-center items-center ml-auto cursor-pointer
-                                            bg-c_BCC3CF dark:bg-dark_0fc9f2">
-                                <BsInfo className="text-white" />
+                            <div className="" style={{width: '10%'}}>Name</div>
+                            <div className="text-right" style={{width: '10%'}}>Pairs</div>
+                            <div className="text-center" style={{width: '10%'}}>Avg. Price</div>
+                            <div className="text-right" style={{width: '10%'}}>Ttl. Vol</div>
+                            <div className="text-right" style={{width: '10%'}}>Ttl. Vol %</div>
+                            <div className="flex items-center justify-center" style={{width: '15%'}}>
+                                <div>Confidence</div>
+                                <div className="w-4 h-4 rounded-full text-white flex justify-center items-center ml-2 cursor-pointer
+                                                bg-c_BCC3CF dark:bg-dark_0fc9f2">
+                                    <BsInfo className="text-white" />
+                                </div>
                             </div>
+                            <div className="flex items-center" style={{width: '7%'}}>
+                                <div className="ml-auto flex-1">Liquidity</div>
+                                <div className="w-4 h-4 rounded-full text-white flex justify-center items-center ml-auto cursor-pointer
+                                                bg-c_BCC3CF dark:bg-dark_0fc9f2">
+                                    <BsInfo className="text-white" />
+                                </div>
+                            </div>
+                            <div className="flex-1 flex items-center justify-center pr-5">Updated</div>
                         </div>
-                        <div className="flex-1 flex items-center justify-center pr-5">Updated</div>
-                    </div>
-                    <div className="flex flex-col text-sm">
-                        {table_data.map((item, index) => {
-                            return <div key={`data_${index}`} className="flex flex-col">
-                                        <div className={`flex items-center w-full py-4 ${enableExpand[index] ? 'bg-white dark:bg-transparent' : ''}`}>
-                                            <div className="flex items-center pl-5" style={{width: '7%'}}>
-                                                <div className="font-semibold text-center">{index + 1}</div>
-                                            </div>
-                                            <div className="flex items-center" style={{width: '10%'}}>
-                                                <div className="bg-c_E8EBF1 w-6 h-6 rounded-full"></div>
-                                                <div className="ml-1 font-semibold">{item.name}</div>
-                                            </div>
-                                            <div className="text-right font-semibold
-                                                            text-c_1564C0 dark:text-dark_0fc9f2"
-                                                style={{width: '10%'}}>ABC/XYZ</div>
-                                            <div className={`flex items-center justify-center font-semibold`} style={{width: '10%'}}>
-                                                <div>${Number(item.price).toLocaleString()}</div>
-                                            </div>
-                                            <div className="text-right font-semibold" style={{width: '10%'}}>${Number(item.ttl_vol).toLocaleString()}</div>
-                                            <div className={`text-right font-semibold`} style={{width: '10%'}}>
-                                                <div>{item.ttl_vol_perc}%</div>
-                                            </div>
-                                            <div className="flex items-center justify-center" style={{width: '15%'}}>
-                                                <div className={`h-7_5 w-24 flex justify-center items-center rounded-r-full rounded-l-full text-sm text-white shadow-card bg-c_64A879`}>High</div>
-                                            </div>
-                                            <div className={`font-semibold text-right`} style={{width: '7%'}}>{item.liquidity}</div>
-                                            <div className="flex-1 flex items-center justify-center pr-5">
-                                                <div className="font-semibold mr-5">Recently</div>
-                                                <div className={`w-5 h-5 rounded-full flex flex-col shadow-card dark:shadow-dark_card ${enableExpand[index] ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : 'bg-white border border-c_1564C0'}`}>
-                                                    <div className="mx-auto my-auto cursor-pointer" 
-                                                        onClick={() => {
-                                                            const array_var = [...enableExpand]
-                                                            array_var[index] = !enableExpand[index]
-                                                            setEnableExpand(array_var)
-                                                        }}>
-                                                        <BsChevronExpand className={`${enableExpand[index] ? 'text-white' : 'text-c_1564C0 dark:text-dark_0fc9f2'}`}/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div className={`bg-white dark:bg-transparent text-black dark:text-white ${enableExpand[index] ? 'block': 'hidden'}`}>
+                        <div className="flex flex-col text-sm">
+                            {table_data.map((item, index) => {
+                                return <div key={`data_${index}`} className="flex flex-col">
                                             <div className={`flex items-center w-full py-4 ${enableExpand[index] ? 'bg-white dark:bg-transparent' : ''}`}>
                                                 <div className="flex items-center pl-5" style={{width: '7%'}}>
-                                                    <div className="font-semibold text-center hidden">{index + 1}</div>
+                                                    <div className="font-semibold text-center">{index + 1}</div>
                                                 </div>
                                                 <div className="flex items-center" style={{width: '10%'}}>
-                                                    <div className="bg-c_E8EBF1 w-6 h-6 rounded-full hidden"></div>
-                                                    <div className="ml-1 font-semibold hidden">{item.name}</div>
+                                                    <div className="bg-c_E8EBF1 w-6 h-6 rounded-full"></div>
+                                                    <div className="ml-1 font-semibold">{item.name}</div>
                                                 </div>
                                                 <div className="text-right font-semibold
                                                                 text-c_1564C0 dark:text-dark_0fc9f2"
@@ -143,8 +109,8 @@ const TitleTable = () => {
                                                 </div>
                                                 <div className={`font-semibold text-right`} style={{width: '7%'}}>{item.liquidity}</div>
                                                 <div className="flex-1 flex items-center justify-center pr-5">
-                                                    <div className="font-semibold mr-5 hidden">Recently</div>
-                                                    <div className={`hidden w-5 h-5 rounded-full flex-col shadow-card dark:shadow-dark_card ${enableExpand[index] ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : 'bg-white border border-c_1564C0'}`}>
+                                                    <div className="font-semibold mr-5">Recently</div>
+                                                    <div className={`w-5 h-5 rounded-full flex flex-col shadow-card dark:shadow-dark_card ${enableExpand[index] ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : 'bg-white border border-c_1564C0'}`}>
                                                         <div className="mx-auto my-auto cursor-pointer" 
                                                             onClick={() => {
                                                                 const array_var = [...enableExpand]
@@ -156,11 +122,52 @@ const TitleTable = () => {
                                                     </div>
                                                 </div>
                                             </div>
+
+
+                                            <div className={`bg-white dark:bg-transparent text-black dark:text-white ${enableExpand[index] ? 'block': 'hidden'}`}>
+                                                <div className={`flex items-center w-full py-4 ${enableExpand[index] ? 'bg-white dark:bg-transparent' : ''}`}>
+                                                    <div className="flex items-center pl-5" style={{width: '7%'}}>
+                                                        <div className="font-semibold text-center hidden">{index + 1}</div>
+                                                    </div>
+                                                    <div className="flex items-center" style={{width: '10%'}}>
+                                                        <div className="bg-c_E8EBF1 w-6 h-6 rounded-full hidden"></div>
+                                                        <div className="ml-1 font-semibold hidden">{item.name}</div>
+                                                    </div>
+                                                    <div className="text-right font-semibold
+                                                                    text-c_1564C0 dark:text-dark_0fc9f2"
+                                                        style={{width: '10%'}}>ABC/XYZ</div>
+                                                    <div className={`flex items-center justify-center font-semibold`} style={{width: '10%'}}>
+                                                        <div>${Number(item.price).toLocaleString()}</div>
+                                                    </div>
+                                                    <div className="text-right font-semibold" style={{width: '10%'}}>${Number(item.ttl_vol).toLocaleString()}</div>
+                                                    <div className={`text-right font-semibold`} style={{width: '10%'}}>
+                                                        <div>{item.ttl_vol_perc}%</div>
+                                                    </div>
+                                                    <div className="flex items-center justify-center" style={{width: '15%'}}>
+                                                        <div className={`h-7_5 w-24 flex justify-center items-center rounded-r-full rounded-l-full text-sm text-white shadow-card bg-c_64A879`}>High</div>
+                                                    </div>
+                                                    <div className={`font-semibold text-right`} style={{width: '7%'}}>{item.liquidity}</div>
+                                                    <div className="flex-1 flex items-center justify-center pr-5">
+                                                        <div className="font-semibold mr-5 hidden">Recently</div>
+                                                        <div className={`hidden w-5 h-5 rounded-full flex-col shadow-card dark:shadow-dark_card ${enableExpand[index] ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : 'bg-white border border-c_1564C0'}`}>
+                                                            <div className="mx-auto my-auto cursor-pointer" 
+                                                                onClick={() => {
+                                                                    const array_var = [...enableExpand]
+                                                                    array_var[index] = !enableExpand[index]
+                                                                    setEnableExpand(array_var)
+                                                                }}>
+                                                                <BsChevronExpand className={`${enableExpand[index] ? 'text-white' : 'text-c_1564C0 dark:text-dark_0fc9f2'}`}/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                        })}
+                            })}
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </>
     )

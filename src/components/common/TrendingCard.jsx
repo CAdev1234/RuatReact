@@ -20,8 +20,8 @@ const TrendingCard = () => {
                             shadow-card dark:shadow-dark_card">
                 <div className="flex items-center">
                     <img src={TrendingSvg} className="h-5"></img>
-                    <div className="ml-2 font-semibold">Trending</div>
-                    <button className="ml-auto text-xs font-semibold
+                    <div className="ml-2 font-semibold text-lg">Trending</div>
+                    <button className="ml-auto text-sm font-semibold
                                         text-c_1564C0 dark:text-dark_0fc9f2">View All</button>
                 </div>
                 <div>

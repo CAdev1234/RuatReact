@@ -99,22 +99,22 @@ const MainBoard = () => {
                         </div>
                     </div>
 
-                    {/* <div className="mt-15 px-7">
+                    <div className="mt-15 px-7">
                         <div className="text-3xl font-bold text-black dark:text-white">Component 4</div>
                         <div className="mt-7">
                             <TrendingCard />
                         </div>
-                    </div> */}
+                    </div>
 
 
-                    {/* <div className="mt-15 px-7">
+                    <div className="mt-15 px-7">
                         <div className="text-3xl font-bold text-black dark:text-white">Component 5</div>
                         <div className="mt-7">
                             <CoinTable />
                         </div>
-                    </div> */}
+                    </div>
 
-                    {/* <div className="mt-15 px-7">
+                    <div className="mt-15 px-7">
                         <div className="text-3xl font-bold text-black dark:text-white">Component 6</div>
                         <div className="mt-7">
                             <div className="flex items-center">
@@ -131,24 +131,24 @@ const MainBoard = () => {
                                 })}
                             </div>
                         </div>
-                    </div> */}
+                    </div>
 
                     
                     
-                    {/* <div className="mt-15 px-7">
+                    <div className="mt-15 px-7">
                         <div className="text-3xl font-bold text-black dark:text-white">Component 7</div>
                         <div className="mt-7">
                             <CoinDetail />
                         </div>
-                    </div> */}
+                    </div>
 
 
-                    {/* <div className="mt-15 px-7">
+                    <div className="mt-15 px-7">
                         <div className="text-3xl font-bold text-black dark:text-white">Component 8</div>
                         <div className="">
                             <TitleTable />
                         </div>
-                    </div> */}
+                    </div>
 
 
                     

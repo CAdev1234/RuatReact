@@ -19,7 +19,8 @@ const CoinTable = () => {
     return (
         <>
             <div className="flex flex-col">
-                <div className="flex items-center text-xs">
+                <div className="items-center text-xs
+                                block lg:flex">
                     <div className="flex items-center">
                         <div className="flex items-center justify-center w-25 h-7_5 bg-white rounded-md
                                         shadow-card dark:shadow-dark_card">
@@ -32,13 +33,15 @@ const CoinTable = () => {
                             <div className="text-c_6E7582 ml-2 font-semibold">Portfolio</div>
                         </div>
                     </div>
-                    <div className="flex items-center flex-1">
-                        <div className="flex items-center justify-center w-16 h-7_5 ml-7 text-white font-semibold rounded-l-full rounded-r-full
+                    <div className="flex items-center flex-1 flex-wrap gap-y-3
+                                    mt-3 lg:mt-0">
+                        <div className="flex items-center justify-center w-16 h-7_5 text-white font-semibold rounded-l-full rounded-r-full
+                                        ml-0 lg:ml-5
                                         bg-c_1564C0 dark:bg-dark_0fc9f2
                                         shadow-card dark:shadow-dark_card">Top 10</div>
-                        <div className="flex items-center justify-center w-25 h-7_5 ml-7 bg-white text-c_6E7582 font-semibold rounded-l-full rounded-r-full
+                        <div className="flex items-center justify-center w-25 h-7_5 ml-5 bg-white text-c_6E7582 font-semibold rounded-l-full rounded-r-full
                                         shadow-card dark:shadow-dark_card">Top Gainers</div>
-                        <div className="flex items-center justify-center w-25 h-7_5 ml-7 bg-white text-c_6E7582 font-semibold rounded-l-full rounded-r-full
+                        <div className="flex items-center justify-center w-25 h-7_5 ml-5 bg-white text-c_6E7582 font-semibold rounded-l-full rounded-r-full
                                         shadow-card dark:shadow-dark_card">Top Loosers</div>
                         <button className="font-semibold ml-auto text-sm
                                             text-c_1564C0 dark:text-dark_0fc9f2">View All</button>
@@ -64,7 +67,7 @@ const CoinTable = () => {
                             <div className="text-center" style={{width: '10%'}}>30d %</div>
                             <div className="text-center" style={{width: '20%'}}>Last 7 Days</div>
                         </div>
-                        <div className="flex flex-col text-xs">
+                        <div className="flex flex-col text-sm">
                             {table_data.map((item, index) => {
                                 return <div key={`data_${index}`} className="flex flex-col">
                                             <div className={`flex items-center w-full py-4 ${enableExpand[index] ? 'bg-white dark:bg-transparent' : ''}`}>
@@ -75,8 +78,8 @@ const CoinTable = () => {
                                                 <div className="flex items-center w-2/12">
                                                     <div className="bg-c_E8EBF1 w-6 h-6 rounded-full"></div>
                                                     <div className="ml-1 font-semibold">{item.name}</div>
-                                                    <div className="ml-1 text-c_6E7582">{item.label}</div>
-                                                    <button className={`w-9 h-5_5 ml-1 flex items-center justify-center font-semibold rounded-md
+                                                    <div className="ml-2 text-c_6E7582 text-xs">{item.label}</div>
+                                                    <button className={`w-9 h-5_5 ml-2 flex items-center justify-center text-xs font-semibold rounded-md
                                                                         ${item.enableBuyBtn ? 'block' : 'hidden'}
                                                                         text-c_6E7582 dark:text-dark_0fc9f2
                                                                         shadow-card dark:shadow-dark_card`}>BUY</button>
@@ -115,8 +118,9 @@ const CoinTable = () => {
 
 
                                             <div className={`${enableExpand[index] ? 'block': 'hidden'}
-                                                            bg-white dark:bg-transparent`}>
-                                                <div className="flex items-center w-full py-4 text-xs">
+                                                            bg-white dark:bg-transparent
+                                                            text-sm`}>
+                                                <div className="flex items-center w-full py-4">
                                                     <div className="flex items-center w-1/12">
                                                     </div>
                                                     <div className="flex items-center w-2/12 text-c_6E7582 font-semibold">Market Cap</div>
@@ -129,7 +133,7 @@ const CoinTable = () => {
                                                     </div>
                                                 </div>
 
-                                                <div className="flex items-center w-full py-4 text-xs">
+                                                <div className="flex items-center w-full py-4">
                                                     <div className="flex items-center w-1/12">
                                                     </div>
                                                     <div className="flex items-center w-2/12 text-c_6E7582 font-semibold">24 Hour Trading Vol</div>
@@ -140,7 +144,7 @@ const CoinTable = () => {
                                                     </div>
                                                 </div>
 
-                                                <div className="flex items-center w-full py-4 text-xs">
+                                                <div className="flex items-center w-full py-4">
                                                     <div className="flex items-center w-1/12">
                                                     </div>
                                                     <div className="flex items-center w-2/12 text-c_6E7582 font-semibold">Fully Diluted Valuation</div>
