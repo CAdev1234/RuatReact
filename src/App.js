@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className={`flex pt-7 pb-32
+                      px-5 2xl:px-0
                      bg-white dark:bg-black`}>
         <LeftSide className="hidden md:block ml-auto" />
         <MainBoard />
