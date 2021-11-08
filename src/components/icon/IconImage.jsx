@@ -1,6 +1,6 @@
 import AppleStoreBadge from '../../assets/img/apple_store_badge.svg'
 import GooglePlayBadge from '../../assets/img/google-play-badge.png'
-import Logo from '../../assets/img/logo.svg'
+import Logo from './Logo'
 import TrendingSvg from '../../assets/img/Trending.svg'
 
 import {
@@ -18,6 +18,7 @@ import {
     BsChevronExpand,
     BsChevronRight,
     BsDownload,
+    BsBoxArrowUpRight,
 } from 'react-icons/bs'
 
 import {
@@ -50,6 +51,7 @@ export {
     BsChevronExpand,
     BsChevronRight,
     BsDownload,
+    BsBoxArrowUpRight,
 
     FaDiscord,
     FaTelegramPlane,

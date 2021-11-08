@@ -14,7 +14,7 @@ import {
 //     returnVal?: any
 // }
 
-const SelectInput = ({option_li, className, option_class, default_option, enable_underline, returnVal}) => {
+const SelectInput = ({option_li, className, option_board_class, option_class, default_option, enable_underline, returnVal}) => {
     // let item_li = ['Dermal filler1', 'Dermal filler2', 'Dermal filler3']
     const [enableSelect, setEnableSelect] = useState(false)
     const [currentVal, setCurrentVal] = useState(default_option)
@@ -29,7 +29,8 @@ const SelectInput = ({option_li, className, option_class, default_option, enable
                         </div>
                     </div>
                     {enableSelect && 
-                        <div className="absolute top-11 left-0 w-full">
+                        <div className={`absolute left-0 w-full ${option_board_class}
+                                        shadow-card dark:shadow-dark_card`}>
                             <div className="max-h-80 overflow-y-auto text-c_00080D">
                                 {option_li.map((item, index) => {
                                     return <div key={`index_${index}`} onClick={() => {

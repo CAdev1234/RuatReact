@@ -1,7 +1,10 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
+    // screens: {
+    //   'xs': '456px'
+    // },
     extend: {
       colors: {
         c_1564C0: '#1564C0',
@@ -23,13 +26,32 @@ module.exports = {
         c_C8C8C8: '#C8C8C8',
         c_EBE188: '#EBE188',
         c_F17A13: '#F17A13',
+
+        blue_grey: '#607D8B',
+        blue_grey_lighten_5: '#ECEFF1',
+        blue_grey_lighten_4: '#CFD8DC',
+        blue_grey_lighten_3: '#B0BEC5',
+        blue_grey_lighten_2: '#90A4AE',
+        blue_grey_lighten_1: '#78909C',
+        blue_grey_darken_1: '#546E7A',
+        blue_grey_darken_2: '#455A64',
+        blue_grey_darken_3: '#37474F',
+        blue_grey_darken_4: '#263238',
+
+
+        dark_040739: '#040739',
+        dark_021a4f: '#021a4f',
+        dark_0fc9f2: '#0fc9f2'
+
         
       },
 
       boxShadow: {
-        'card': '0px 1px 3px #d6d6d6'
+        'card': '0px 1px 3px #d6d6d6',
+        'dark_card': '0px 0px 15px 0px #0fc9f2'
       },
       fontSize: {
+        '9px': '9px',
         '22px': '22px',
         '64px': '64px',
         '120px': '120px',
@@ -40,8 +62,10 @@ module.exports = {
         '2_5': '10px',
         '7_5': '30px',
         '12_5': '50px',
+        '14_5': '58px',
         '15': '60px',
         '17_5': '70px',
+        '18': '72px',
         '22_5': '90px',
         '25': '100px',
         '30': '120px',
@@ -64,16 +88,19 @@ module.exports = {
       height: {
         '2_5': '10px',
         '3_5': '14px',
+        '4_5': '18px',
         '5_5': '22px',
         '7_5': '30px',
         '11_5': '46px',
         '12_5': '50px',
         '15': '60px',
+        '30': '120px',
         '33': '132px'
       },
       width: {
         '2_5': '10px',
         '3_5': '14px',
+        '4_5': '18px',
         '11_5': '46px',
         '12_5': '50px',
         '22_5': '90px',
@@ -94,12 +121,17 @@ module.exports = {
         '154_5': '618px',
         '162_5': '650px',
         '150vw': '150vw'
+      },
+      minWidth: {
+        '136px': '136px'
       }
 
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      boxShadow: ['dark']
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
