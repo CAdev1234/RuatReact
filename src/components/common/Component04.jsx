@@ -4,7 +4,7 @@ import {
     FaCaretUp
 } from '../icon/IconImage'
 
-const TrendingCard = () => {
+const Component04 = () => {
     let items = [
         {title: 'Cardano', percent: -4.46, label: 'ADA'},
         {title: 'Arata', percent: -8.76, label: 'ARATA'},
@@ -49,4 +49,4 @@ const TrendingCard = () => {
 }
 
 
-export default TrendingCard
+export default Component04

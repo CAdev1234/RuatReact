@@ -6,14 +6,14 @@ import {
 } from '../icon/IconImage'
 import SelectInput from '../ui/SelectInput'
 import ThemeToggle from '../ui/ThemeToggle/ThemeToggle'
-import CoinDetail from './CoinDetail'
-import CoinTable from './CoinTable'
+import CoinDetail from './Component07'
+import CoinTable from './Component05'
 import DynamicLineChart from './DynamicLineChart'
-import EventCard from './EventCard'
-import HightLightCard from './HightLightCard'
-import PortfolioCard from './PortfolioCard'
-import TitleTable from './TitleTable'
-import TrendingCard from './TrendingCard'
+import EventCard from './Component06'
+import HightLightCard from './Component02'
+import PortfolioCard from './Component03'
+import TitleTable from './Component08'
+import TrendingCard from './Component04'
 
 const MainBoard = () => {
     let language_li = ['English', 'Hindi', 'Russian']
@@ -21,6 +21,13 @@ const MainBoard = () => {
     let submenu_li = ['Sub Menu 01', 'Sub Menu 02', 'Sub Menu 03', 'Sub Menu 04', 'Sub Menu 05', 'Sub Menu 06']
     const [language, setLanguage] = useState(language_li[0])
     const [currency, setCurrency] = useState(currency_li[0])
+    const [enableSubMenu, setEnableSubmenu] = useState([true, new Array(submenu_li.length - 1).fill(false)])
+
+    const subMenuHandler = (index) => {
+        let new_array = new Array(submenu_li.length).fill(false)
+        new_array[index] = true
+        setEnableSubmenu(new_array)
+    }
 
     return (
         <div className="flex-1 w-0 max-w-6xl mr-auto">
@@ -50,7 +57,7 @@ const MainBoard = () => {
                             </div>
                             <div className="ml-3">
                                 <SelectInput 
-                                    className="text-xs text-c_2A7BD9 dark:text-dark_0fc9f2 font-semibold w-11"
+                                    className="text-xs text-c_2A7BD9 dark:text-dark_0fc9f2 font-semibold w-16"
                                     option_board_class="bg-c_F8F9FB dark:bg-dark_021a4f top-8 z-10"
                                     option_li={currency_li} 
                                     default_option={currency_li[0]}
@@ -80,8 +87,9 @@ const MainBoard = () => {
                                     px-7_5 xl:px-0">
                         {submenu_li.map((item, index) => {
                             return <div key={`submenu_${index}`} 
-                                        className={`h-7_5 w-28 flex justify-center items-center rounded-r-full rounded-l-full text-sm ${index === 0 ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'bg-white text-black font-semibold'}
-                                                    shadow-card dark:shadow-dark_card`}>{item}</div>
+                                        className={`h-7_5 w-28 flex justify-center items-center rounded-r-full rounded-l-full cursor-pointer text-sm ${enableSubMenu[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'bg-white text-black font-semibold'}
+                                                    shadow-card dark:shadow-dark_card`}
+                                        onClick={() => {subMenuHandler(index)}}>{item}</div>
                         })}
                     </div>
 

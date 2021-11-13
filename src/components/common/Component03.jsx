@@ -5,7 +5,7 @@ import {
 } from '../icon/IconImage'
 import ToggleSwitch from '../ui/ToggleSwitch/ToggleSwitch'
 
-const PortfolioCard = () => {
+const Component03 = () => {
     let toggle_id = generateUUID()
     return (
         <>
@@ -39,4 +39,4 @@ const PortfolioCard = () => {
     )
 }
 
-export default PortfolioCard
+export default Component03

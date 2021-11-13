@@ -7,7 +7,7 @@ import {
     FaCaretDown
 } from '../icon/IconImage'
 
-const CoinDetail = () =>  {
+const Component07 = () =>  {
     let currency_price_detail = [
         {title: 'Open',                 price: 2.44,                perc: null},
         {title: 'High',                 price: 2.66,                perc: null},
@@ -221,7 +221,7 @@ const CoinDetail = () =>  {
                                     <div className="text-c_C85151">4.29%</div>
                                 </div>
                             </div>
-                            <div className="ml-0 sm:ml-auto">
+                            <div className="ml-0 sm:ml-auto cursor-pointer">
                                 <BsDownload className="font-semibold"/>
                             </div>
                         </div>
@@ -326,7 +326,7 @@ const CoinDetail = () =>  {
                                                 <div className="text-c_6E7582">{item.title}</div>
                                                 {item.link === null && <div className="text-sm mr-2">{item.detail}</div>}
                                                 {item.link !== null && 
-                                                    <div className="flex items-center font-semibold
+                                                    <div className="flex items-center font-semibold cursor-pointer
                                                                 text-c_1564C0 dark:text-dark_0fc9f2">
                                                         <div className="text-sm mr-2">{item.detail}</div>
                                                         <BsBoxArrowUpRight />
@@ -343,4 +343,4 @@ const CoinDetail = () =>  {
     )
 }
 
-export default CoinDetail
+export default Component07

@@ -1,8 +1,9 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { 
     Logo
 } from "../icon/IconImage"
 import { ThemeContext } from '../contexts/ThemeContext'
+import { useState } from "react/cjs/react.development"
 
 const LeftSide = ({className}) => {
     let menu_li = [
@@ -13,8 +14,15 @@ const LeftSide = ({className}) => {
         {title: 'Menu 5', link: ''},
         {title: 'Menu 6', link: ''}
     ]
-
     const {theme, setTheme} = useContext(ThemeContext)
+    const [enableMenu, setEnableMenu] = useState([true, new Array(menu_li.length - 1).fill(false)])
+
+    const menuHandler = (index) => {
+        let new_array = new Array(menu_li.length).fill(false)
+        new_array[index] = true
+        setEnableMenu(new_array)
+    }
+
     return (
         <>
             <div className={`flex flex-col w-52 ${className}`}>
@@ -23,7 +31,8 @@ const LeftSide = ({className}) => {
                 </div>
                 <div className="flex flex-col mt-7_5">
                     {menu_li.map((item, index) => {
-                        return <div key={`menu_${index}`} className={`font-semibold flex items-center mt-7_5 text-sm text-black dark:text-white ${index === 0 ? 'text-c_1564C0 dark:text-dark_0fc9f2' : ''}`}>
+                        return <div key={`menu_${index}`} className={`font-semibold flex items-center mt-7_5 text-sm cursor-pointer text-black dark:text-white ${enableMenu[index] === true ? 'text-c_1564C0 dark:text-dark_0fc9f2' : ''}`}
+                                onClick={() => {menuHandler(index)}}>
                                     <div className="w-6 h-6 rounded-full bg-c_E8EBF1"></div>
                                     <div className="ml-2">{item.title}</div>
                                 </div>

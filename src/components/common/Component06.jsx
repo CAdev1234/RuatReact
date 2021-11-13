@@ -3,7 +3,7 @@ import {
     FaRegThumbsDown
 } from '../icon/IconImage'
 
-const EventCard = () => {
+const Component06 = () => {
     return (
         <>
             <div className={`rounded-md max-w-3xl text-xs 
@@ -55,4 +55,4 @@ const EventCard = () => {
     )
 }
 
-export default EventCard
+export default Component06

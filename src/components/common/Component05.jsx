@@ -9,7 +9,7 @@ import {
 } from '../icon/IconImage'
 import DynamicLineChart from './DynamicLineChart'
 
-const CoinTable = () => {
+const Component05 = () => {
     let table_data = [
         {name: 'Bitcoin', label: 'BTC', enableBuyBtn: true, price: '42,345.42', h24: -1.24, d7: 0.18, d30: 0.18, last_7days: '', market_cap: '1,070,014,284,715', circlating_supply: '18,840,650', h24_trading_vol: '$41,260,909,468', total_supply: '21,000,000', fully_diluted_valuation: '$1,192,649,934,000', max_supply: '21,000,000'},
         {name: 'Ethereum', label: 'ETH', enableBuyBtn: true, price: '42,345.42', h24: -1.24, d7: 0.18, d30: 0.18, last_7days: '', market_cap: '1,070,014,284,715', circlating_supply: '18,840,650', h24_trading_vol: '$41,260,909,468', total_supply: '21,000,000', fully_diluted_valuation: '$1,192,649,934,000', max_supply: '21,000,000'},
@@ -166,4 +166,4 @@ const CoinTable = () => {
     )
 }
 
-export default CoinTable
+export default Component05

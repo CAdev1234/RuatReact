@@ -7,7 +7,7 @@ import {
 } from '../icon/IconImage'
 import DynamicLineChart from './DynamicLineChart'
 
-const HightLightCard = () => {
+const Component02 = () => {
     useEffect(() => {
         let gauge_chart = window.echarts.init(document.getElementById('gauge_chart'))
         let gauge_value = 50
@@ -249,7 +249,7 @@ const HightLightCard = () => {
                                                 ml-auto sm:ml-3">
                                     <BsInfo className="text-white" />
                                 </div>
-                                <div className="text-sm dark:text-dark_0fc9f2
+                                <div className="text-sm dark:text-dark_0fc9f2 cursor-pointer
                                                 ml-3 sm:ml-auto">
                                     <BsFillShareFill />
                                 </div>
@@ -300,4 +300,4 @@ const HightLightCard = () => {
 }
 
 
-export default HightLightCard
+export default Component02

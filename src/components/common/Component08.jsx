@@ -6,7 +6,7 @@ import {
     BsChevronExpand,
 } from '../icon/IconImage'
 
-const TitleTable = () => {
+const Component08 = () => {
     let title_li = ['Title 1', 'Title 2', 'Title 3', 'Title 4', 'Title 5', 'Title 6', 'Title 7', 'Title 8', 'Title 9', 'Title 10']
     let category_li = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5']
     let table_data = [
@@ -15,6 +15,19 @@ const TitleTable = () => {
         {name: 'Heading', price: 42345.42, ttl_vol: 25761236948, ttl_vol_perc: 0.18, liquidity: 927, last_7days: '', market_cap: '1,070,014,284,715', circlating_supply: '18,840,650', h24_trading_vol: '$41,260,909,468', total_supply: '21,000,000', fully_diluted_valuation: '$1,192,649,934,000', max_supply: '21,000,000'},
     ]
     const [enableExpand, setEnableExpand] = useState(new Array(table_data.length).fill(false))
+    const [enableTitle, setEnableTitle] = useState([true, new Array(title_li.length - 1).fill(false)])
+    const [enableCate, setEnableCate] = useState([true, new Array(category_li.length - 1).fill(false)])
+
+    const titleHandler = (index) => {
+        let new_array = new Array(title_li.length).fill(false)
+        new_array[index] = true
+        setEnableTitle(new_array)
+    }
+    const categoryHandler = (index) => {
+        let new_array = new Array(title_li.length).fill(false)
+        new_array[index] = true
+        setEnableCate(new_array)
+    }
     return (
         <>
             <div className="flex flex-col">
@@ -22,9 +35,10 @@ const TitleTable = () => {
                     {title_li.map((item, index) => {
                         return <div 
                                     key={`submenu_${index}`} 
-                                    className={`relative h-7_5 w-20 flex justify-center items-center rounded-r-full rounded-l-full text-sm
-                                                ${index === 0 ? 'bg-c_1564C0 text-white dark:bg-dark_0fc9f2' : 'bg-white text-black font-semibold'}
-                                                shadow-card dark:shadow-dark_card`}>
+                                    className={`relative h-7_5 w-20 flex justify-center items-center rounded-r-full rounded-l-full text-sm cursor-pointer
+                                                ${enableTitle[index] === true ? 'bg-c_1564C0 text-white dark:bg-dark_0fc9f2' : 'bg-white text-black font-semibold'}
+                                                shadow-card dark:shadow-dark_card`}
+                                    onClick={() => {titleHandler(index)}}>
                             {item}
                             {index === 7 && 
                                 <div className="absolute -top-2 -right-1">
@@ -47,7 +61,8 @@ const TitleTable = () => {
                     <div className="flex items-center flex-wrap gap-y-3
                                     mt-3 lg:mt-0">
                         {category_li.map((item, index) => {
-                            return <div key={`submenu_${index}`} className={`h-7_5 w-28 flex justify-center items-center text-sm ${index === 0 ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white rounded-r-full rounded-l-full shadow-card' : 'bg-transparent dark:text-white font-semibold'}`}>{item}</div>
+                            return <div key={`submenu_${index}`} className={`h-7_5 w-28 flex justify-center items-center text-sm cursor-pointer ${enableCate[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white rounded-r-full rounded-l-full shadow-card' : 'bg-transparent dark:text-white font-semibold'}`}
+                                        onClick={() => {categoryHandler(index)}}>{item}</div>
                         })}
                     </div>
                 </div>
@@ -173,4 +188,4 @@ const TitleTable = () => {
     )
 }
 
-export default TitleTable
+export default Component08
