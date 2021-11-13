@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { generateUUID } from '../../utils/SimpleFun'
 import {
     BsGlobe2,
     BsCurrencyDollar,
+    BsChevronUp,
 } from '../icon/IconImage'
 import SelectInput from '../ui/SelectInput'
 import ThemeToggle from '../ui/ThemeToggle/ThemeToggle'
@@ -22,12 +23,32 @@ const MainBoard = () => {
     const [language, setLanguage] = useState(language_li[0])
     const [currency, setCurrency] = useState(currency_li[0])
     const [enableSubMenu, setEnableSubmenu] = useState([true, new Array(submenu_li.length - 1).fill(false)])
+    const [enableScrollUpBtn, setEnableScrollUpBtn] = useState(false)
 
     const subMenuHandler = (index) => {
         let new_array = new Array(submenu_li.length).fill(false)
         new_array[index] = true
         setEnableSubmenu(new_array)
     }
+
+    const scrollToUpHandler = () => {
+        window.scrollTo(
+          { top: 0, behavior: 'smooth' }
+        )
+    }
+
+    useEffect(() => {
+        let scrollHandler = () => {
+            let scroll_top = window.scrollY
+            if (scroll_top > 0) {
+                setEnableScrollUpBtn(true)
+            }else {
+                setEnableScrollUpBtn(false)
+            }
+        }
+        window.addEventListener('scroll', () => scrollHandler())
+        return window.removeEventListener('scroll', scrollHandler)
+    }, [])
 
     return (
         <div className="flex-1 w-0 max-w-6xl mr-auto">
@@ -159,7 +180,10 @@ const MainBoard = () => {
                     </div>
 
 
-                    
+                    <div className={`fixed bottom-10 right-10 w-12 h-12 flex items-center justify-center rounded-full cursor-pointer shadow-card text-white font-semibold bg-c_1564C0 dark:bg-dark_0fc9f2 ${enableScrollUpBtn === false ? 'hidden' : 'block'}`}
+                        onClick={() => {scrollToUpHandler()}}>
+                            <BsChevronUp className={`text-xl`}/>
+                        </div>
                 </div>
             </div>
         </div>

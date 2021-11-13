@@ -17,6 +17,7 @@ import {
     BsStar,
     BsChevronExpand,
     BsChevronRight,
+    BsChevronUp,
     BsDownload,
     BsBoxArrowUpRight,
 } from 'react-icons/bs'
@@ -50,6 +51,7 @@ export {
     BsStar,
     BsChevronExpand,
     BsChevronRight,
+    BsChevronUp,
     BsDownload,
     BsBoxArrowUpRight,
 

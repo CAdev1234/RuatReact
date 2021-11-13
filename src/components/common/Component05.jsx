@@ -15,7 +15,19 @@ const Component05 = () => {
         {name: 'Ethereum', label: 'ETH', enableBuyBtn: true, price: '42,345.42', h24: -1.24, d7: 0.18, d30: 0.18, last_7days: '', market_cap: '1,070,014,284,715', circlating_supply: '18,840,650', h24_trading_vol: '$41,260,909,468', total_supply: '21,000,000', fully_diluted_valuation: '$1,192,649,934,000', max_supply: '21,000,000'},
         {name: 'Cardano', label: 'ADA', enableBuyBtn: false, price: '42,345.42', h24: -1.24, d7: 0.18, d30: 0.18, last_7days: '', market_cap: '1,070,014,284,715', circlating_supply: '18,840,650', h24_trading_vol: '$41,260,909,468', total_supply: '21,000,000', fully_diluted_valuation: '$1,192,649,934,000', max_supply: '21,000,000'},
     ]
+    let top_li = [
+        {title: 'Top 10'},
+        {title: 'Top Gainers'},
+        {title: 'Top Loosers'}
+    ]
     const [enableExpand, setEnableExpand] = useState(new Array(table_data.length).fill(false))
+    const [enableTop, setEnableTop] = useState([true, new Array(top_li.length - 1).fill(false)])
+
+    const topHandler = (index) => {
+        let new_array = new Array(top_li.length).fill(false)
+        new_array[index] = true
+        setEnableTop(new_array)
+    }
     return (
         <>
             <div className="flex flex-col">
@@ -35,14 +47,16 @@ const Component05 = () => {
                     </div>
                     <div className="flex items-center flex-1 flex-wrap gap-y-3
                                     mt-3 lg:mt-0">
-                        <div className="flex items-center justify-center w-16 h-7_5 text-white font-semibold rounded-l-full rounded-r-full
+                        {top_li.map((item, index) => {
+                            return <div key={`top_${index}`}
+                                        className={`flex items-center justify-center px-3 h-7_5 text-white font-semibold rounded-l-full rounded-r-full cursor-pointer mr-2
                                         ml-0 lg:ml-5
-                                        bg-c_1564C0 dark:bg-dark_0fc9f2
-                                        shadow-card dark:shadow-dark_card">Top 10</div>
-                        <div className="flex items-center justify-center w-25 h-7_5 ml-5 bg-white text-c_6E7582 font-semibold rounded-l-full rounded-r-full
-                                        shadow-card dark:shadow-dark_card">Top Gainers</div>
-                        <div className="flex items-center justify-center w-25 h-7_5 ml-5 bg-white text-c_6E7582 font-semibold rounded-l-full rounded-r-full
-                                        shadow-card dark:shadow-dark_card">Top Loosers</div>
+                                        ${enableTop[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : 'bg-white text-c_6E7582'}
+                                        shadow-card dark:shadow-dark_card`}
+                                        onClick={() => {topHandler(index)}}>
+                                    {item.title}
+                                    </div>
+                        })}
                         <button className="font-semibold ml-auto text-sm
                                             text-c_1564C0 dark:text-dark_0fc9f2">View All</button>
                     </div>
