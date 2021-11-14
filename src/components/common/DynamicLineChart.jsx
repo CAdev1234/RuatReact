@@ -2,8 +2,24 @@ import { useEffect, useState } from "react";
 import { generateUUID } from "../../utils/SimpleFun";
 
 
+function debounce(fn, ms) {
+    let timer
+    return () => {
+      clearTimeout(timer)
+      timer = setTimeout(_ => {
+        timer = null
+        fn.apply(this, arguments)
+      }, ms)
+    };
+  }
+  
+
 const DynamicLineChart = ({className, line_color}) => {
     const [chartID, setChartID] = useState(generateUUID())
+    const [dimensions, setDimensions] = useState({ 
+        height: window.innerHeight,
+        width: window.innerWidth
+    })
     useEffect(() => {
         const lineChart = window.echarts.init(document.getElementById(chartID))
         function randomData() {
@@ -87,7 +103,23 @@ const DynamicLineChart = ({className, line_color}) => {
         // return () => {
         //     clearInterval(chart_interval)
         // }
+
+        const debouncedHandleResize = debounce(function handleResize() {
+            console.log('resize')
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth
+            })
+            lineChart.clear()
+            lineChart.setOption(option)
+        }, 1000)
+
+        window.addEventListener('resize', debouncedHandleResize)
+        return () => {
+            window.removeEventListener('resize', debouncedHandleResize)
+        }
     }, [])
+
     
     return(
         <div id={chartID} className={className}></div>

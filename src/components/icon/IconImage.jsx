@@ -18,8 +18,11 @@ import {
     BsChevronExpand,
     BsChevronRight,
     BsChevronUp,
+    BsChevronDown,
     BsDownload,
     BsBoxArrowUpRight,
+    BsList,
+    BsXCircle
 } from 'react-icons/bs'
 
 import {
@@ -52,8 +55,11 @@ export {
     BsChevronExpand,
     BsChevronRight,
     BsChevronUp,
+    BsChevronDown,
     BsDownload,
     BsBoxArrowUpRight,
+    BsList,
+    BsXCircle,
 
     FaDiscord,
     FaTelegramPlane,

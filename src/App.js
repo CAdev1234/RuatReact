@@ -12,8 +12,9 @@ import Loader from './components/common/Loader';
 function App() {
   return (
     <div className="App">
-      <div className={`flex pt-7 pb-32
-                      px-5 2xl:px-0
+      <div className={`flex
+                      pt-0 sm:pt-7
+                      px-0 sm:px-5 2xl:px-0
                      bg-white dark:bg-black`}>
         <LeftSide className="hidden md:block ml-auto" />
         <MainBoard />
