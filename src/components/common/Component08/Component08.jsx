@@ -356,7 +356,7 @@ const Component08 = () => {
                                         text-c_1564C0 dark:text-white">
                             <div className="font-semibold">Load More</div>
                             <div className="ml-2">
-                                <BsChevronDown />
+                                <BsChevronDown style={{strokeWidth: 1}}/>
                             </div>
                         </div>
                     </div>
@@ -372,7 +372,7 @@ const Component08 = () => {
                                         text-c_1564C0 dark:text-white">
                             <div className="font-semibold">Load More</div>
                             <div className="ml-2">
-                                <BsChevronDown />
+                                <BsChevronDown style={{strokeWidth: 1}}/>
                             </div>
                         </div>
                     </div>

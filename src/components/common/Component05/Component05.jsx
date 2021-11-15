@@ -202,7 +202,7 @@ const Component05 = () => {
                     <div className="text-black dark:text-white">
                         <div className="flex items-center px-3 w-full font-bold py-4
                                         text-9px xl:text-xs">
-                            <div className="flex items-center w-1/12">
+                            <div className="flex items-center w-10">
                                 <BsStar className="text-c_6E7582 dark:text-dark_0fc9f2 invisible"/>
                                 <div className="ml-1">#</div>
                                 <FaCaretUp className="ml-1"/>
@@ -217,7 +217,7 @@ const Component05 = () => {
                             {table_data.map((item, index) => {
                                 return <div key={`data_${index}`} className="flex flex-col">
                                             <div className={`px-3 flex items-center w-full h-71px border-b border-c_E8EBF1 dark:border-dark_0fc9f2 dark:border-opacity-50 ${enableExpand[index] ? 'bg-white dark:bg-gray-800' : ''}`}>
-                                                <div className="flex items-center w-1/12">
+                                                <div className="flex items-center w-10">
                                                     <BsStar className="text-c_6E7582 dark:text-dark_0fc9f2"/>
                                                     <div className="font-semibold
                                                                     ml-2 sm:ml-6">{index + 1}</div>
