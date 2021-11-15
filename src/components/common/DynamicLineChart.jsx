@@ -110,8 +110,9 @@ const DynamicLineChart = ({className, line_color}) => {
                 height: window.innerHeight,
                 width: window.innerWidth
             })
-            lineChart.clear()
-            lineChart.setOption(option)
+            // lineChart.clear()
+            // lineChart.setOption(option)
+            lineChart.resize()
         }, 1000)
 
         window.addEventListener('resize', debouncedHandleResize)
