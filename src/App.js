@@ -1,13 +1,11 @@
-import { createContext, useState, lazy, Suspense } from 'react';
 import './assets/css/tailwind.css'
 
-// const Footer = lazy(() => import('./components/common/Footer'));
-// const Loader = lazy(() => import('./components/common/Loader'))
-
+import { BrowserRouter, Route } from 'react-router-dom'
 import Footer from './components/common/Footer'
 import LeftSide from './components/common/LeftSide'
 import MainBoard from './components/common/MainBoard'
-import Loader from './components/common/Loader';
+
+import indexRoutes from './routes'
 
 function App() {
   return (
@@ -15,12 +13,13 @@ function App() {
       <div className={`flex
                       pt-0 sm:pt-7
                       px-0 sm:px-5 2xl:px-0
-                     bg-white dark:bg-black`}>
+                    bg-white dark:bg-black`}>
         <LeftSide className="hidden md:block ml-auto" />
-        <MainBoard />
+        <MainBoard></MainBoard>
       </div>
       <Footer />
     </div>
+    
   );
 }
 

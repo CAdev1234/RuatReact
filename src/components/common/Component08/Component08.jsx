@@ -36,14 +36,17 @@ const Component08 = () => {
                         return <div 
                                     key={`submenu_${index}`} 
                                     className={`relative h-7_5 w-22_5 flex justify-center items-center rounded-r-full rounded-l-full text-sm cursor-pointer
+                                                transform hover:scale-110 ease-out duration-700
                                                 ${enableTitle[index] === true ? 'bg-c_1564C0 text-white dark:bg-dark_0fc9f2' : 'bg-white text-black font-semibold'}
                                                 shadow-card dark:shadow-dark_card`}
                                     onClick={() => {titleHandler(index)}}>
                             {item}
                             {index === 7 && 
                                 <div className="absolute -top-2 -right-1">
-                                    <div className="relative w-4_5 h-4_5 rounded-full bg-c_C85151 flex items-center justify-center text-white text-9px">22
-                                        <div className="absolute bg-c_C85151 w-4 h-4 rounded-full animate-ping"></div>
+                                    <div className="relative w-4_5 h-4_5 rounded-full flex items-center justify-center text-white text-9px
+                                                    bg-c_C85151 dark:bg-dark_E91E63">22
+                                        <div className="absolute w-4 h-4 rounded-full animate-ping
+                                                        bg-c_C85151 dark:bg-dark_E91E63"></div>
                                     </div>
                                 </div>
                             }
@@ -61,7 +64,9 @@ const Component08 = () => {
                     <div className="flex items-center flex-wrap gap-y-3
                                     mt-3 lg:mt-0">
                         {category_li.map((item, index) => {
-                            return <div key={`submenu_${index}`} className={`h-7_5 w-27 flex justify-center items-center text-sm cursor-pointer ${enableCate[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white rounded-r-full rounded-l-full' : 'bg-transparent dark:text-white font-semibold'}`}
+                            return <div key={`submenu_${index}`} 
+                                        className={`h-7_5 px-4 flex justify-center items-center text-sm cursor-pointer ${enableCate[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white rounded-r-full rounded-l-full' : 'bg-transparent dark:text-white font-semibold'}
+                                                    transform hover:scale-110 ease-out duration-700`}
                                         onClick={() => {categoryHandler(index)}}>{item}</div>
                         })}
                     </div>
@@ -349,7 +354,7 @@ const Component08 = () => {
                 <div className="w-full relative mt-9 h-7
                                 hidden sm:block">
                     <div className="flex items-center h-full text-xs font-medium leading-normal text-c_6E7582 dark:text-white">Showing 1 - 5 out of 148</div>
-                    <div className="absolute top-0 left-0 w-full h-full flex justify-center">
+                    <div className="absolute top-0 left-0 w-full h-full flex justify-center transform hover:scale-110 ease-out duration-700">
                         <div className="px-3 flex justify-center items-center cursor-pointer text-sm leading-tight rounded-full 
                                         shadow-card dark:shadow-dark_card
                                         bg-white dark:bg-dark_0fc9f2

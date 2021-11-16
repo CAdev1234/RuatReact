@@ -6,6 +6,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+input:focus {
+  outline: none;
+}
+
 
 .text_overflow_one_line {white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .textellipsis_2 {display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;}

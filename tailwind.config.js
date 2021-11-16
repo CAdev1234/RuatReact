@@ -41,7 +41,9 @@ module.exports = {
 
         dark_040739: '#040739',
         dark_021a4f: '#021a4f',
-        dark_0fc9f2: '#0fc9f2'
+        dark_0fc9f2: '#0fc9f2',
+        dark_E91E63: '#E91E63',
+        dark_FFEB3B: '#FFEB3B',
 
         
       },
@@ -51,8 +53,11 @@ module.exports = {
         'dark_card': '0px 0px 15px 0px #0fc9f2'
       },
       fontSize: {
+        '7px': '7px',
+        '8px': '8px',
         '9px': '9px',
         '10px': '10px',
+        '11px': '11px',
         '22px': '22px',
         '28px': '28px',
         '64px': '64px',
@@ -60,10 +65,17 @@ module.exports = {
         '200px': '200px'
       },
       
+      lineHeight: {
+        '14_18': '1.2857',
+        '18_22': '1.2222'
+      },
+
       margin: {
         '2_5': '10px',
         '4_5': '18px',
+        '5_5': '22px',
         '7_5': '30px',
+        '10_5': '42px',
         '12_5': '50px',
         '14_5': '58px',
         '15': '60px',
@@ -80,6 +92,7 @@ module.exports = {
       padding: {
         '4_5': '18px',
         '7_5': '30px',
+        '10_5': '42px',
         '12_5': '50px',
         '13': '52px',
         '15': '60px',
@@ -94,12 +107,15 @@ module.exports = {
         '3_5': '14px',
         '4_5': '18px',
         '5_5': '22px',
+        '6_5': '26px',
         '7_5': '30px',
         '9_5': '38px',
         '11_5': '46px',
         '12_5': '50px',
         '15': '60px',
+        '22_5': '90px',
         '30': '120px',
+        '30_5': '122px',
         '33': '132px',
         '71px': '71px',
         '76px': '76px'
@@ -108,6 +124,7 @@ module.exports = {
         '2_5': '10px',
         '3_5': '14px',
         '4_5': '18px',
+        '6_5': '26px',
         '11_5': '46px',
         '12_5': '50px',
         '15': '60px',
@@ -116,6 +133,7 @@ module.exports = {
         '27': '108px',
         '30': '120px',
         '31_5': '136px',
+        '45': '180px',
         '50': '200px',
         '75': '300px',
         '81': '324px',
@@ -139,7 +157,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      boxShadow: ['dark']
+      boxShadow: ['dark'],
+      animation: ['motion-safe', 'motion-reduce']
     },
   },
   plugins: [

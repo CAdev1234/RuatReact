@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
     FaCaretDown,
     FaCaretUp,
@@ -7,7 +7,23 @@ import {
 } from '../../icon/IconImage'
 import DynamicLineChart from '../DynamicLineChart'
 
+function debounce(fn, ms) {
+    let timer
+    return () => {
+        clearTimeout(timer)
+        timer = setTimeout(_ => {
+            timer = null
+            fn.apply(this, arguments)
+        }, ms)
+    };
+}
+  
+
 const Component02 = () => {
+    const [dimensions, setDimensions] = useState({ 
+        height: window.innerHeight,
+        width: window.innerWidth
+    })
     useEffect(() => {
         let gauge_chart = window.echarts.init(document.getElementById('gauge_chart'))
         let gauge_value = 50
@@ -154,6 +170,19 @@ const Component02 = () => {
             ],
         };
         gauge_chart.setOption(option)
+
+        const debouncedHandleResize = debounce(function handleResize() {
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth
+            })
+            gauge_chart.resize()
+        }, 1000)
+
+        window.addEventListener('resize', debouncedHandleResize)
+        return () => {
+            window.removeEventListener('resize', debouncedHandleResize)
+        }
     }, [])
     return (
         <>
@@ -173,18 +202,18 @@ const Component02 = () => {
                     <div className="grid gap-y-4
                                     px-3 xl:px-5
                                     gap-x-2 sm:gap-x-4 xl:gap-x-8
-                                    grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4
+                                    grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4
                                     w-full xl:w-8/12">
                         <div className="aspect-w-1 aspect-h-1
                                         min-w-0 xl:min-w-136px">
-                            <div className="rounded-lg flex flex-col border border-c_7EAFE8 text-center
+                            <div className="rounded-lg flex flex-col text-center
                                             bg-white dark:bg-gray-900
                                             shadow-card dark:shadow-dark_card
                                             py-2 sm:py-4">
                                 <div className="font-medium text-c_6E7582
-                                                text-9px xl:text-sm">Total M.Cap</div>
-                                <div className="font-semibold mt-1
-                                                text-sm xl:text-lg">$2.59T</div>
+                                                text-8px xl:text-sm">Total M.Cap</div>
+                                <div className="font-bold mt-1
+                                                text-10px xl:text-lg">$2.59T</div>
                                 <div className="flex items-center mx-auto mt-1">
                                     <FaCaretDown className="text-c_C85151" />
                                     <div className="text-c_C85151 font-semibold ml-1
@@ -200,9 +229,9 @@ const Component02 = () => {
                                             shadow-card dark:shadow-dark_card
                                             py-2 sm:py-4">
                                 <div className="font-medium text-c_6E7582
-                                                text-9px xl:text-sm">24h Vol</div>
-                                <div className="font-semibold mt-1
-                                                text-sm xl:text-lg">$128B</div>
+                                                text-8px xl:text-sm">24h Vol</div>
+                                <div className="font-bold mt-1
+                                                text-10px xl:text-lg">$128B</div>
                                 <div className="flex items-center mx-auto mt-1 text-c_64A879">
                                     <FaCaretUp className="text-c_64A879" />
                                     <div className="font-semibold ml-1
@@ -218,9 +247,9 @@ const Component02 = () => {
                                             shadow-card dark:shadow-dark_card
                                             py-2 sm:py-4">
                                 <div className="font-medium text-c_6E7582
-                                                text-9px xl:text-sm">BTC.D</div>
-                                <div className="font-semibold mt-1
-                                                text-sm xl:text-lg">45.25%</div>
+                                                text-8px xl:text-sm">BTC.D</div>
+                                <div className="font-bold mt-1
+                                                text-10px xl:text-lg">45.25%</div>
                                 <div className="flex items-center mx-auto mt-1 text-c_64A879">
                                     <FaCaretUp className="text-c_64A879" />
                                     <div className="font-semibold ml-1
@@ -236,9 +265,9 @@ const Component02 = () => {
                                             shadow-card dark:shadow-dark_card
                                             py-2 sm:py-4">
                                 <div className="font-medium text-c_6E7582
-                                                text-9px xl:text-sm">ETH.D</div>
-                                <div className="font-semibold mt-1
-                                                text-sm xl:text-lg">17.25%</div>
+                                                text-8px xl:text-sm">ETH.D</div>
+                                <div className="font-bold mt-1
+                                                text-10px xl:text-lg">17.25%</div>
                                 <div className="flex items-center mx-auto mt-1">
                                     <FaCaretDown className="text-c_C85151" />
                                     <div className="text-c_C85151 font-semibold ml-1
@@ -260,15 +289,15 @@ const Component02 = () => {
                                                 w-4_5 sm:w-7
                                                 h-4_5 sm:h-7"></div>
                                 <div className="flex-1 font-semibold ml-3
-                                                text-base sm:text-sm">Fear & Greed Index</div>
+                                                text-xs sm:text-sm">Fear & Greed Index</div>
                             </div>
                             <div className="flex items-center flex-1
                                             my-2 sm:my-0">
-                                <div className="w-4 h-4 rounded-full text-white flex justify-center items-center cursor-pointer
+                                <div className="w-4 h-4 rounded-full text-white flex justify-center items-center cursor-pointer transform hover:scale-125 ease-out duration-700
                                                 bg-c_BCC3CF dark:bg-dark_0fc9f2 ml-3">
                                     <BsInfo className="text-white" />
                                 </div>
-                                <div className="text-sm dark:text-dark_0fc9f2 cursor-pointer ml-auto">
+                                <div className="text-sm dark:text-dark_0fc9f2 cursor-pointer ml-auto transform hover:scale-125 ease-out duration-700">
                                     <BsFillShareFill />
                                 </div>
                             </div>
@@ -290,29 +319,29 @@ const Component02 = () => {
                             <div className="flex flex-col flex-1 h-full">
                                 <div>
                                     <div className="text-c_6E7582 font-semibold leading-normal
-                                                    text-9px sm:text-xs">Yesterday</div>
+                                                    text-7px sm:text-xs">Yesterday</div>
                                     <div className="flex items-center text-c_50BC2E font-semibold
-                                                    text-xs sm:text-sm">
+                                                    text-9px sm:text-sm">
                                         <div>Ext.Greed</div>
-                                        <div className="ml-auto">70%</div>
+                                        <div className="ml-4 sm:ml-auto">70%</div>
                                     </div>
                                 </div>
                                 <div className="mt-3">
                                     <div className="text-c_6E7582 font-semibold leading-normal
-                                                    text-9px sm:text-xs">Last week</div>
+                                                    text-7px sm:text-xs">Last week</div>
                                     <div className="flex items-center text-c_50BC2E font-semibold
-                                                    text-xs sm:text-sm">
+                                                    text-9px sm:text-sm">
                                         <div>Ext.Greed</div>
-                                        <div className="ml-auto">78%</div>
+                                        <div className="ml-4 sm:ml-auto">78%</div>
                                     </div>
                                 </div>
                                 <div className="mt-3">
                                     <div className="text-c_6E7582 font-semibold leading-normal
-                                                    text-9px sm:text-xs">Last month</div>
+                                                    text-7px sm:text-xs">Last month</div>
                                     <div className="flex items-center text-c_E4BE64 font-semibold
-                                                    text-xs sm:text-sm">
+                                                    text-9px sm:text-sm">
                                         <div>Neutral</div>
-                                        <div className="ml-auto">53%</div>
+                                        <div className="ml-4 sm:ml-auto">53%</div>
                                     </div>
                                 </div>
                             </div>

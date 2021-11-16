@@ -5,13 +5,13 @@ import { generateUUID } from "../../utils/SimpleFun";
 function debounce(fn, ms) {
     let timer
     return () => {
-      clearTimeout(timer)
-      timer = setTimeout(_ => {
-        timer = null
-        fn.apply(this, arguments)
-      }, ms)
+        clearTimeout(timer)
+        timer = setTimeout(_ => {
+            timer = null
+            fn.apply(this, arguments)
+        }, ms)
     };
-  }
+}
   
 
 const DynamicLineChart = ({className, line_color}) => {
@@ -110,8 +110,6 @@ const DynamicLineChart = ({className, line_color}) => {
                 height: window.innerHeight,
                 width: window.innerWidth
             })
-            // lineChart.clear()
-            // lineChart.setOption(option)
             lineChart.resize()
         }, 1000)
 

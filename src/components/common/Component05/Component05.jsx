@@ -34,12 +34,12 @@ const Component05 = () => {
                 <div className="items-center text-xs
                                 block lg:flex">
                     <div className="flex items-center">
-                        <div className="flex items-center justify-center w-25 h-7_5 bg-white rounded-md cursor-pointer
+                        <div className="flex items-center justify-center w-25 h-7_5 bg-white rounded-md cursor-pointer transform hover:scale-110 ease-out duration-700
                                         shadow-card dark:shadow-dark_card">
                             <BsStarFill className="text-c_6E7582"/>
                             <div className="text-c_6E7582 ml-2 font-semibold leading-normal">Watchlist</div>
                         </div>
-                        <div className="flex items-center justify-center w-25 h-7_5 bg-white rounded-md ml-2 cursor-pointer
+                        <div className="flex items-center justify-center w-25 h-7_5 bg-white rounded-md ml-2 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         shadow-card dark:shadow-dark_card">
                             <BsPieChartFill className="text-c_6E7582"/>
                             <div className="text-c_6E7582 ml-2 font-semibold leading-normal">Portfolio</div>

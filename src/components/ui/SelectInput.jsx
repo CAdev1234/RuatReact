@@ -12,12 +12,14 @@ const SelectInput = ({option_li, className, option_board_class, option_class, de
     
     return <ClickOutside active={enableSelect} onClick={() => setEnableSelect(false)}>
                 <div>
-                    <div className={`border-none py-2 relative cursor-pointer ${className}`} onClick={() => {setEnableSelect(!enableSelect)}}>
-                        <div className={currentVal === default_option ? `text-c_00080D` : ''}>{typeof(currentVal) === 'string' ? currentVal : currentVal?.title}</div>
-                        <div className="absolute top-0 right-0 flex flex-col h-full">
-                            <div className="my-auto">
-                                {!enableSelect && <FaCaretDown />}
-                                {enableSelect && <FaCaretUp />}
+                    <div className={`relative cursor-pointer ${className}`} onClick={() => {setEnableSelect(!enableSelect)}}>
+                        <div className="flex items-center relative w-full">
+                            <div className={currentVal === default_option ? `text-c_00080D` : ''}>{typeof(currentVal) === 'string' ? currentVal : currentVal?.title}</div>
+                            <div className="absolute top-0 right-0 flex flex-col h-full">
+                                <div className="my-auto">
+                                    {!enableSelect && <FaCaretDown />}
+                                    {enableSelect && <FaCaretUp />}
+                                </div>
                             </div>
                         </div>
                         {enableSelect && 

@@ -1,12 +1,12 @@
 import {
-    FaThumbsUp,
-    FaRegThumbsDown
+    MdThumbUpAlt,
+    MdThumbDownOffAlt
 } from '../../icon/IconImage'
 
 const Component06 = () => {
     return (
         <>
-            <div className={`rounded-md max-w-3xl text-xs 
+            <div className={`rounded-md max-w-3xl text-xs cursor-pointer transform hover:scale-105 ease-out duration-700
                             bg-white text-black dark:bg-gray-900 dark:text-white
                             shadow-card dark:shadow-dark_card`}>
                 <div className="flex w-full">
@@ -31,17 +31,17 @@ const Component06 = () => {
                                 <div>391 Votes</div>
                             </div>
                             <div className="bg-gray-100 flex-1 h-1.5 rounded-full relative">
-                                <div className="absolute w-3/4 h-full bg-c_EBE188 rounded-full"></div>
+                                <div className="absolute w-3/4 h-full bg-c_EBE188 dark:bg-dark_FFEB3B rounded-full"></div>
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-1 flex-col">
                         <div className="mx-auto h-full flex flex-col">
                             <div className="mt-auto">
-                                <FaThumbsUp className="text-base text-c_64A879"/>
+                                <MdThumbUpAlt className="text-2xl text-c_64A879"/>
                             </div>
                             <div className="mb-auto mt-9">
-                                <FaRegThumbsDown className="text-base text-c_C8C8C8"/>
+                                <MdThumbDownOffAlt className="text-2xl text-c_C8C8C8"/>
                             </div>
                         </div>
                     </div>

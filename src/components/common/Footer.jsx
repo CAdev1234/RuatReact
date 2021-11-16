@@ -66,7 +66,7 @@ const Footer = () => {
                             <div className="leading-snug font-semibold
                                             text-sm md:text-lg lg:text-xl xl:text-22px">Category 1</div>
                             {cate_li.map((item, index) => {
-                                return <div key={`category_${index}`} className="mt-5 text-xs sm:text-sm">{item.title}</div>
+                                return <div key={`category_${index}`} className="mt-5 transform hover:scale-110 ease-out duration-700 cursor-pointer text-xs sm:text-sm ">{item.title}</div>
                             })}
                         </div>
 
@@ -75,7 +75,8 @@ const Footer = () => {
                                             text-sm md:text-lg lg:text-xl xl:text-22px">Company</div>
                             {page_li.map((item, index) => {
                                 return <div key={`page_${index}`} className="mt-5">
-                                            <div className="text-xs sm:text-sm">{item.title}</div>        
+                                            <div className="transform hover:scale-110 ease-out duration-700 cursor-pointer
+                                                            text-xs sm:text-sm">{item.title}</div>        
                                             <div className={`text-c_E5BE3D leading-normal font-normal ${item.title === 'Careers' ? 'block' : 'hidden'}
                                                             text-10px sm:text-xs`}>We are hiring!</div>
                                         </div>
@@ -86,7 +87,9 @@ const Footer = () => {
                             <div className="leading-snug font-semibold
                                             text-sm md:text-lg lg:text-xl xl:text-22px">Support</div>
                             {support_li.map((item, index) => {
-                                return <div key={`support_${index}`} className="mt-5 text-xs sm:text-sm">{item.title}</div>
+                                return <div key={`support_${index}`} 
+                                            className="mt-5 transform hover:scale-110 ease-out duration-700 cursor-pointer 
+                                                        text-xs sm:text-sm">{item.title}</div>
                             })}
                         </div>
                     </div>
@@ -95,20 +98,20 @@ const Footer = () => {
                 <div className="block sm:hidden">
                     <div className="text-center">Follow us on</div>
                     <div className="flex items-center justify-center py-4">
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2
                                         ">
                             <BsTwitter className=" text-c_1564C0 dark:text-white"/>
                         </div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2">
                             <BsInstagram className=" text-c_1564C0 dark:text-white"/>
                         </div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2">
                             <FaTelegramPlane className="text-c_1564C0 dark:text-white"/>
                         </div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2">
                             <FaDiscord className="text-c_1564C0 dark:text-white"/>
                         </div>
@@ -124,20 +127,20 @@ const Footer = () => {
                     <div className="ml-auto items-center
                                     hidden sm:flex">
                         <div className="">Follow us on</div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2
                                         ml-auto sm:ml-9">
                             <BsTwitter className=" text-c_1564C0 dark:text-white"/>
                         </div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2">
                             <BsInstagram className=" text-c_1564C0 dark:text-white"/>
                         </div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2">
                             <FaTelegramPlane className="text-c_1564C0 dark:text-white"/>
                         </div>
-                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer
+                        <div className="w-6 h-6 rounded-full flex items-center justify-center ml-8 cursor-pointer transform hover:scale-110 ease-out duration-700
                                         bg-white dark:bg-dark_0fc9f2">
                             <FaDiscord className="text-c_1564C0 dark:text-white"/>
                         </div>

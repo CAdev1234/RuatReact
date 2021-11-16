@@ -31,10 +31,11 @@ const LeftSide = ({className}) => {
                 </div>
                 <div className="flex flex-col mt-7_5">
                     {menu_li.map((item, index) => {
-                        return <div key={`menu_${index}`} className={`font-semibold flex items-center mt-7_5 text-sm cursor-pointer text-black dark:text-white ${enableMenu[index] === true ? 'text-c_1564C0 dark:text-dark_0fc9f2' : ''}`}
-                                onClick={() => {menuHandler(index)}}>
+                        return <div key={`menu_${index}`} 
+                                    className={`font-semibold flex items-center mt-7_5 text-sm cursor-pointer text-black dark:text-white ${enableMenu[index] === true ? 'text-c_1564C0 dark:text-dark_0fc9f2' : ''}`}
+                                    onClick={() => {menuHandler(index)}}>
                                     <div className="w-6 h-6 rounded-full bg-c_E8EBF1"></div>
-                                    <div className="ml-2">{item.title}</div>
+                                    <div className="ml-2 transform hover:scale-110 ease-out duration-700">{item.title}</div>
                                 </div>
                     })}
                 </div>
