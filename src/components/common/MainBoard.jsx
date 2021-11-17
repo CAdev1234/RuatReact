@@ -1,19 +1,20 @@
 import { Route, Routes } from "react-router-dom"
 import Task1 from "../../pages/Task1"
 import Task2 from "../../pages/Task2"
-import indexRoutes from "../../routes"
 import { useContext, useState } from 'react'
 import {
     BsGlobe2,
     BsCurrencyDollar,
     Logo,
     BsList,
-    BsXCircle
+    BsX
 } from '../icon/IconImage'
 import SelectInput from '../ui/SelectInput'
 import ThemeToggle from '../ui/ThemeToggle/ThemeToggle'
 import { ThemeContext } from "../contexts/ThemeContext"
 import ScrollUpBtn from "../ui/ScrollUpBtn"
+import SignInModal from "./SignInModal"
+import SignUpModal from "./SignUpModal"
 
 const MainBoard = () => {
     let menu_li = [
@@ -33,6 +34,8 @@ const MainBoard = () => {
     const [language, setLanguage] = useState(language_li[0])
     const [currency, setCurrency] = useState(currency_li[0])
     const [enableSubMenu, setEnableSubmenu] = useState([true, new Array(submenu_li.length - 1).fill(false)])
+    const [enableSignInModal, setEnableSignInModal] = useState(false)
+    const [eanbleSignUpModal, setEnableSignUpModal] = useState(false)
 
     const subMenuHandler = (index) => {
         let new_array = new Array(submenu_li.length).fill(false)
@@ -49,7 +52,31 @@ const MainBoard = () => {
         setEnableMobileMenu(true)
     }
 
+    const openSignInModalHandler = () => {
+        document.querySelector('body').style.overflow = 'hidden'
+        if (eanbleSignUpModal) {
+            setEnableSignUpModal(false)
+        }
+        setEnableSignInModal(true)
+    }
+
+    const closeSignInModalHandler = () => {
+        document.querySelector('body').style.overflow = 'auto'
+        setEnableSignInModal(false)
+    }
+
+    const openSignUpModalHandler = () => {
+        document.querySelector('body').style.overflow = 'hidden'
+        if (enableSignInModal) {
+            setEnableSignInModal(false)
+        }
+        setEnableSignUpModal(true)
+    }
     
+    const closeSignUpModalHandler = () => {
+        document.querySelector('body').style.overflow = 'auto'
+        setEnableSignUpModal(false)
+    }
 
     return (
         <div className="flex-1 w-0 max-w-6xl mr-auto">
@@ -70,7 +97,7 @@ const MainBoard = () => {
                             <div className="ml-3">
                                 <SelectInput 
                                     className="text-xs text-c_2A7BD9 dark:text-dark_0fc9f2 font-semibold w-16"
-                                    option_board_class="bg-c_F8F9FB dark:bg-dark_040739 top-5 z-10"
+                                    option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-5 z-10"
                                     option_li={language_li} 
                                     default_option={language_li[0]}
                                     returnVal={setLanguage}
@@ -87,7 +114,7 @@ const MainBoard = () => {
                             <div className="ml-3">
                                 <SelectInput 
                                     className="text-xs text-c_2A7BD9 dark:text-dark_0fc9f2 font-semibold w-16"
-                                    option_board_class="bg-c_F8F9FB dark:bg-dark_040739 top-5 z-10"
+                                    option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-5 z-10"
                                     option_li={currency_li} 
                                     default_option={currency_li[0]}
                                     returnVal={setCurrency}
@@ -113,7 +140,8 @@ const MainBoard = () => {
                         </div>
                         <button className="h-7_5 w-20 flex items-center justify-center text-sm rounded-l-full rounded-r-full transform hover:scale-110 ease-out duration-700
                                             ml-auto sm:ml-0
-                                            bg-c_1564C0 text-white dark:bg-dark_0fc9f2">Sign In</button>
+                                            bg-c_1564C0 text-white dark:bg-dark_0fc9f2"
+                                onClick={() => {openSignInModalHandler()}}>Sign In</button>
                     </div>
                 </div>
 
@@ -146,21 +174,34 @@ const MainBoard = () => {
 
             {/* mobile menu */}
             {enableMobileMenu &&
-                <div className="fixed top-0 left-0 w-full h-screen bg-gray-100 dark:bg-gray-900">
-                    <div className="w-full h-full relative">
-                        <div className="absolute top-5 right-5 text-black dark:text-dark_0fc9f2 text-xl">
-                            <BsXCircle style={{strokeWidth: 1}} onClick={() => {closeMobileMenuHandler()}}/>
+                <div className="fixed top-0 left-0 w-full h-screen bg-c_1564C0 dark:bg-gray-900 text-white">
+                    <div className="w-full h-full relative p-10">
+                        <div className="flex items-center">
+                            <div className="text-lg font-semibold">MENUS</div>
+                            <div className="ml-auto text-4xl text-c_1564C0 w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                <BsX style={{strokeWidth: 0.5}} onClick={() => {closeMobileMenuHandler()}}/>
+                            </div>
                         </div>
-                        <div className="flex flex-col py-12 px-6">
+                        <div className="flex flex-col gap-y-10 mt-10">
                             {menu_li.map((item, index) => {
-                                return <div key={`leftside_${index}`} className="py-2 px-1 hover:bg-gray-800" onClick={() => {closeMobileMenuHandler()}}>
-                                            <div className="text-black dark:text-white">{item.title}</div>
+                                return <div key={`leftside_${index}`} 
+                                            className="flex items-center text-sm font-medium
+                                                       cursor-pointer transform hover:scale-105 ease-out duration-700" 
+                                            onClick={() => {closeMobileMenuHandler()}}>
+                                            <div className="w-6 h-6 rounded-full bg-white mr-4"></div>
+                                            <div className="">{item.title}</div>
                                         </div>
                             })}
                         </div>
                     </div>
                 </div>
             }
+
+            {/* signin modal */}
+            {enableSignInModal && <SignInModal cancelSignInModalHandler={closeSignInModalHandler} openSignUpModalHandler={openSignUpModalHandler} />}
+
+            {/* signup modal */}
+            {eanbleSignUpModal && <SignUpModal cancelSignUpModalHandler={closeSignUpModalHandler} openSignInModalHandler={openSignInModalHandler}/>}
         </div>
     )
 }

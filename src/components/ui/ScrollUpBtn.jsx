@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { BsChevronUp } from '../icon/IconImage'
 
 const ScrollUpBtn = () => {
@@ -37,4 +37,4 @@ const ScrollUpBtn = () => {
     )
 }
 
-export default ScrollUpBtn
+export default React.memo(ScrollUpBtn)

@@ -54,10 +54,10 @@ const Component21 = () => {
                                 <div className="flex flex-1 flex-col">
                                     <div className="mx-auto h-full flex flex-col">
                                         <div className="mt-auto">
-                                            <MdThumbUpAlt className="text-xl text-c_64A879"/>
+                                            <MdThumbUpAlt className="text-2xl text-c_64A879"/>
                                         </div>
                                         <div className="mb-auto mt-9">
-                                            <MdThumbDownOffAlt className="text-xl text-c_C8C8C8"/>
+                                            <MdThumbDownOffAlt className="text-2xl text-c_C8C8C8"/>
                                         </div>
                                     </div>
                                 </div>
@@ -71,10 +71,10 @@ const Component21 = () => {
                                                 border-c_F2F2F2 dark:border-dark_0fc9f2">
                                     <div className="mx-auto h-full flex flex-col">
                                         <div className="mt-auto">
-                                            <BsCalendarEvent className="text-sm text-black dark:text-white"/>
+                                            <BsCalendarEvent className="text-base text-black dark:text-white" style={{strokeWidth: 1}}/>
                                         </div>
                                         <div className="mb-auto mt-7">
-                                            <BsFillBellFill className="text-sm text-black dark:text-white"/>
+                                            <BsFillBellFill className="text-base text-black dark:text-white" style={{strokeWidth: 1}}/>
                                         </div>
                                     </div>
                                 </div>

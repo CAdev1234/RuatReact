@@ -9,19 +9,19 @@ import {
 const Component19 = () => {
 
     let comment_li = [
-        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do.  '},
-        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do.  '},
-        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do.  '},
-        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do.  '},
-        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do.  '},
-        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do.  '},
+        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'},
+        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'},
+        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'},
+        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'},
+        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'},
+        { name: 'User Name', created: '1 Day ago', like: 4, unlike: 2, msg: 2, detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'},
     ]
 
     return (
         <div className="max-w-2xl">
             <div className="flex items-center text-sm leading-tight
                             text-black dark:text-white">
-                <div className="font-bold">Comments 06</div>
+                <div className="font-bold">Comments 05</div>
                 <div className="ml-auto text-black dark:text-dark_0fc9f2">
                     <BsSliders/>
                 </div>
@@ -59,8 +59,9 @@ const Component19 = () => {
                                         <div>{item.name}</div>
                                         <div className="ml-5">{item.created}</div>
                                     </div>
-                                    <div className="font-semibold text-sm leading-14_18
-                                                    text-black dark:text-white">{item.detail}</div>
+                                    <div className="font-semibold leading-14_18
+                                                    text-black dark:text-white
+                                                    text-xs sm:text-sm">{item.detail}</div>
                                     <div className="mt-3 flex items-center
                                                     text-c_6E7582 dark:text-dark_0fc9f2">
                                         <div className="flex items-center text-xs leading-normal">
@@ -79,7 +80,7 @@ const Component19 = () => {
                                 </div>
                             </div>
                             <div className={`my-3 w-full h-px ${index === comment_li.length - 1 ? 'hidden' : 'block'}
-                                            bg-c_BCC3CF dark:bg-dark_0fc9f2`}></div>
+                                            bg-c_F2F2F2 dark:bg-dark_0fc9f2`}></div>
                         </div>
                     )
                 })}

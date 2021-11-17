@@ -4,6 +4,8 @@ import Logo from './Logo'
 import TrendingSvg from '../../assets/img/Trending.svg'
 import CrownSvg from '../../assets/img/crown.svg'
 import CoinSearchSvg from '../../assets/img/coin-search.svg'
+import MaleSvg from '../../assets/img/male-icon.svg'
+import FemaleSvg from '../../assets/img/female-icon.svg'
 
 import {
     BsTwitter,
@@ -24,13 +26,15 @@ import {
     BsDownload,
     BsBoxArrowUpRight,
     BsList,
-    BsXCircle,
+    BsX,
     BsSliders,
     BsChatRightFill,
     BsCalendarEvent,
     BsCalendarEventFill,
     BsFilter,
     BsFillBellFill,
+    BsGenderMale,
+    BsGenderFemale,
 } from 'react-icons/bs'
 
 import {
@@ -67,6 +71,8 @@ export {
     TrendingSvg,
     CrownSvg,
     CoinSearchSvg,
+    FemaleSvg,
+    MaleSvg,
     
     BsTwitter,
     BsInstagram,
@@ -86,13 +92,16 @@ export {
     BsDownload,
     BsBoxArrowUpRight,
     BsList,
-    BsXCircle,
+    BsX,
     BsSliders,
     BsChatRightFill,
     BsCalendarEvent,
     BsCalendarEventFill,
     BsFilter,
     BsFillBellFill,
+    BsGenderMale,
+    BsGenderFemale,
+
 
     FaDiscord,
     FaTelegramPlane,

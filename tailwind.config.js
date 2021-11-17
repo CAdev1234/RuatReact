@@ -2,9 +2,6 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    // screens: {
-    //   'xs': '456px'
-    // },
     extend: {
       colors: {
         c_1564C0: '#1564C0',
@@ -50,7 +47,7 @@ module.exports = {
 
       boxShadow: {
         'card': '0px 1px 3px #d6d6d6',
-        'dark_card': '0px 0px 15px 0px #0fc9f2'
+        'dark_card': '0px 0px 10px 0px #0fc9f2'
       },
       fontSize: {
         '7px': '7px',
@@ -133,6 +130,7 @@ module.exports = {
         '12_5': '50px',
         '14_5': '58px',
         '15': '60px',
+        '18': '72px',
         '22_5': '90px',
         '25': '100px',
         '27': '108px',
@@ -156,7 +154,12 @@ module.exports = {
       },
       minWidth: {
         '136px': '136px'
-      }
+      },
+      maxWidth: {
+        '112px': '112px',
+        '346px': '346px',
+        '430px': '430px'
+      },
 
     },
   },

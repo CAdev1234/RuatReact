@@ -70,7 +70,7 @@ const Component20 = () => {
                         <div className="ml-3">
                             <input type="text" 
                                     className="w-36 flex items-center font-semibold pl-3 rounded-lg border bg-transparent
-                                            placeholder-c_BCC3CF dark:placeholder-dark_0fc9f2
+                                            placeholder-c_BCC3CF
                                             text-black dark:text-dark_0fc9f2
                                             border-c_E8EBF1 dark:border-dark_0fc9f2
                                                 h-5_5 sm:h-7_5
@@ -89,7 +89,7 @@ const Component20 = () => {
                                         border-c_E8EBF1 dark:border-dark_0fc9f2
                                             h-5_5 sm:h-7_5
                                             text-9px sm:text-xs"
-                                option_board_class="bg-c_F8F9FB dark:bg-dark_040739 top-8 z-10"
+                                option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
                                 option_li={coin_option_li} 
                                 default_option={coin_option_li[0]}
                                 returnVal={setCoinOption}
@@ -103,7 +103,7 @@ const Component20 = () => {
                                         border-c_E8EBF1 dark:border-dark_0fc9f2
                                             h-5_5 sm:h-7_5
                                            text-9px sm:text-xs"
-                                option_board_class="bg-c_F8F9FB dark:bg-dark_040739 top-8 z-10"
+                                option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
                                 option_li={exchange_li} 
                                 default_option={exchange_li[0]}
                                 returnVal={setExchange}
@@ -116,7 +116,7 @@ const Component20 = () => {
                                         border-c_E8EBF1 dark:border-dark_0fc9f2
                                             text-9px sm:text-xs
                                             h-5_5 sm:h-7_5"
-                                option_board_class="bg-c_F8F9FB dark:bg-dark_040739 top-8 z-10"
+                                option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
                                 option_li={category_li} 
                                 default_option={category_li[0]}
                                 returnVal={setCategory}

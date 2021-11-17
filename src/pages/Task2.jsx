@@ -48,7 +48,7 @@ const Task2 = () => {
             {/* Component 23 */}
             <div className="mt-12_5
                             px-3 sm:px-8">
-                <div className="mb-5 text-3xl font-bold text-black dark:text-white"></div>
+                <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 23</div>
                 <Component23 />
             </div>
         </div>

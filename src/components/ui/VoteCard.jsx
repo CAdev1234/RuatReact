@@ -1,3 +1,4 @@
+import React from 'react'
 import {
     MdThumbUpAlt,
     MdThumbUpOffAlt,
@@ -12,7 +13,7 @@ const VoteCard = ({title, createdAt, heading, perc, votes, like}) => {
                             bg-white text-black dark:bg-gray-900 dark:text-white
                             shadow-card dark:shadow-dark_card`}>
                 <div className="flex w-full">
-                    <div className="p-3 w-10/12 border-r-2
+                    <div className="p-3 flex-1 border-r-2
                                     border-c_F2F2F2 dark:border-dark_0fc9f2">
                         <div className="flex items-center">
                             <div className="w-6 h-6 bg-c_F2F2F2 rounded-md mr-3"></div>
@@ -37,7 +38,8 @@ const VoteCard = ({title, createdAt, heading, perc, votes, like}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-1 flex-col">
+                    <div className="flex flex-col
+                                    w-15 sm:w-16">
                         <div className="mx-auto h-full flex flex-col">
                             <div className="mt-auto">
                                 <MdThumbUpAlt className={`text-2xl ${like === true ? 'block text-c_64A879' : 'hidden'}`}/>
@@ -57,4 +59,4 @@ const VoteCard = ({title, createdAt, heading, perc, votes, like}) => {
     )
 }
 
-export default VoteCard
+export default React.memo(VoteCard)

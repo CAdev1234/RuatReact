@@ -88,7 +88,7 @@ const Component18 = () => {
                                             <div className="ml-1.5">{item.tradeUp}</div>
                                         </div>
                                         <div className="ml-4 flex items-center text-c_C85151 text-sm leading-normal">
-                                            <IoTrendingUpSharp />
+                                            <IoTrendingDownSharp />
                                             <div className="ml-1.5">{item.tradeDown}</div>
                                         </div>
                                         <div className="ml-4 flex items-center text-c_7EAFE8 text-sm leading-normal">

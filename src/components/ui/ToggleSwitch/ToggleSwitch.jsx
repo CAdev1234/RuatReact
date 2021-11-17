@@ -1,4 +1,6 @@
+import React from 'react'
 import './ToggleSwitch.css'
+
 const ToggleSwitch = ({label, label_css, label_id}) => {
     return (
         <>
@@ -13,4 +15,4 @@ const ToggleSwitch = ({label, label_css, label_id}) => {
     )
 }
 
-export default ToggleSwitch
+export default React.memo(ToggleSwitch)
