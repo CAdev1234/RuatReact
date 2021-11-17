@@ -1,5 +1,6 @@
 import {
     TrendingSvg,
+    IoTrendingUpSharp
 } from '../../icon/IconImage'
 import VoteCard from '../../ui/VoteCard'
 
@@ -31,7 +32,9 @@ const Component22 = () => {
             <div className="flex flex-col w-full">
                 <div className="flex items-center w-full px-3">
                     <div className="flex items-center">
-                        <div className="bg-c_64A879 w-5 h-5 rounded-full"></div>
+                        <div className="bg-c_64A879 w-5 h-5 rounded-full flex items-center justify-center text-white">
+                            <IoTrendingUpSharp />
+                        </div>
                         <div className="ml-2 text-lg font-bold leading-normal">Text 2</div>
                     </div>
                     <div className="ml-auto text-c_1564C0 dark:text-dark_0fc9f2 text-sm leading-normal font-semibold">View All</div>
