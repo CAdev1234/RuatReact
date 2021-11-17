@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { 
+import {
+    CoinSearchSvg, 
     BsChevronRight,
-    BsChevronDown
+    BsChevronDown,
+    MdQuestionAnswer,
+    IoTrendingDownSharp,
+    IoTrendingUpSharp
 } from '../../icon/IconImage'
 
-import BitcoinDollarImg from '../../../assets/img/bitcoin-dollar.jpg'
-import CoinbaseImg from '../../../assets/img/coinbase.jpg'
-import TradingCenterImg from '../../../assets/img/trading-center.jpg'
 
 const Component18 = () => {
     let category_li = [
@@ -17,12 +18,12 @@ const Component18 = () => {
         { title: "Sub Category 5"},
     ]
     let heading_card_li = [
-        { title: 'Heading Title', detail: 'Sed do eiusmod tempor incidid unt ut labore et dolore.', img: CoinbaseImg, created_at: 'CRISTOPHER - JUNE 24, 2021' },
-        { title: 'Heading Title', detail: 'Sed do eiusmod tempor incidid unt ut labore et dolore.', img: TradingCenterImg, created_at: 'CRISTOPHER - JUNE 24, 2021' },
-        { title: 'Heading Title', detail: 'Sed do eiusmod tempor incidid unt ut labore et dolore.', img: BitcoinDollarImg, created_at: 'CRISTOPHER - JUNE 24, 2021' },
-        { title: 'Heading Title', detail: 'Sed do eiusmod tempor incidid unt ut labore et dolore.', img: CoinbaseImg, created_at: 'CRISTOPHER - JUNE 24, 2021' },
-        { title: 'Heading Title', detail: 'Sed do eiusmod tempor incidid unt ut labore et dolore.', img: TradingCenterImg, created_at: 'CRISTOPHER - JUNE 24, 2021' },
-        { title: 'Heading Title', detail: 'Sed do eiusmod tempor incidid unt ut labore et dolore.', img: BitcoinDollarImg, created_at: 'CRISTOPHER - JUNE 24, 2021' }
+        { tradeUp: 386, tradeDown: 28, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' },
+        { tradeUp: 560, tradeDown: 56, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' },
+        { tradeUp: 490, tradeDown: 32, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' },
+        { tradeUp: 692, tradeDown: 56, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' },
+        { tradeUp: 453, tradeDown: 67, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' },
+        { tradeUp: 265, tradeDown: 73, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' }
     ]
 
     const [enableCategory, setEnableCategory] = useState([true, new Array(category_li.length - 1).fill(false)])
@@ -71,24 +72,30 @@ const Component18 = () => {
                 <div className="grid gap-x-8 gap-y-6
                                 grid-cols-1 xl:grid-cols-2">
                     {heading_card_li.map((item, index) => {
-                        return <div className="flex rounded-lg cursor-pointer transform hover:scale-105 ease-out duration-700
+                        return <div className="flex flex-col p-3 rounded-lg cursor-pointer transform hover:scale-105 ease-out duration-700
                                                 shadow-card dark:shadow-dark_card
-                                                bg-white dark:bg-transparent
-                                                h-22_5 sm:h-30_5" 
+                                                bg-white dark:bg-transparent" 
                                     key={`heading_card_${index}`}>
-                                    <img src={item.img} 
-                                        className="rounded-l-lg
-                                                    w-25 sm:w-45"></img>
-                                    <div className="px-4 flex-1 flex flex-col
-                                                    py-2 sm:py-2.5">
-                                        <div className="text-sm font-semibold leading-normal
-                                                        text-c_1564C0 dark:text-dark_0fc9f2
-                                                        text-9px sm:text-sm">{item.title}</div>
-                                        <div className="my-auto font-semibold leading-18_22
+                                    <div className="flex">
+                                        <div className="rounded-full w-14_5 h-14_5 bg-c_E8EBF1"></div>
+                                        <div className="ml-4 flex-1 font-semibold leading-18_22
                                                         text-black dark:text-white
-                                                        text-xs sm:text-lg">{item.detail}</div>
-                                        <div className="leading-normal text-c_6E7582
-                                                        text-9px sm:text-11px">{item.created_at}</div>
+                                                        text-xs sm:text-base">{item.detail}</div>
+                                    </div>
+                                    <div className="mt-4 flex items-center">
+                                        <div className="flex items-center text-c_64A879 text-sm leading-normal">
+                                            <IoTrendingUpSharp />
+                                            <div className="ml-1.5">{item.tradeUp}</div>
+                                        </div>
+                                        <div className="ml-4 flex items-center text-c_C85151 text-sm leading-normal">
+                                            <IoTrendingUpSharp />
+                                            <div className="ml-1.5">{item.tradeDown}</div>
+                                        </div>
+                                        <div className="ml-4 flex items-center text-c_7EAFE8 text-sm leading-normal">
+                                            <MdQuestionAnswer />
+                                            <div className="ml-1.5">{item.question}</div>
+                                        </div>
+                                        <img src={CoinSearchSvg} className="ml-auto"></img>
                                     </div>
                                 </div>
                     })}

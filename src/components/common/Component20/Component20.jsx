@@ -54,7 +54,7 @@ const Component20 = () => {
                                 block 2xl:flex
                                 mt-5 sm:mt-6">
                     <div className="flex items-center">
-                        <div className="w-45 relative
+                        <div className="w-48 relative
                                         h-5_5 sm:h-7_5">
                             <input type="text" 
                                     className="h-full w-full flex items-center pl-3 rounded-lg border font-semibold leading-normal

@@ -3,6 +3,7 @@ import GooglePlayBadge from '../../assets/img/google-play-badge.png'
 import Logo from './Logo'
 import TrendingSvg from '../../assets/img/Trending.svg'
 import CrownSvg from '../../assets/img/crown.svg'
+import CoinSearchSvg from '../../assets/img/coin-search.svg'
 
 import {
     BsTwitter,
@@ -49,8 +50,15 @@ import {
     MdThumbDownAlt,
     MdThumbDownOffAlt,
     MdThumbUpOffAlt,
-    MdRefresh
+    MdRefresh,
+    MdQuestionAnswer
 } from 'react-icons/md'
+
+
+import {
+    IoTrendingDownSharp,
+    IoTrendingUpSharp
+} from 'react-icons/io5'
 
 export {
     AppleStoreBadge,
@@ -58,6 +66,7 @@ export {
     Logo,
     TrendingSvg,
     CrownSvg,
+    CoinSearchSvg,
     
     BsTwitter,
     BsInstagram,
@@ -99,4 +108,9 @@ export {
     MdThumbDownOffAlt,
     MdThumbUpOffAlt,
     MdRefresh,
+    MdQuestionAnswer,
+
+    
+    IoTrendingDownSharp,
+    IoTrendingUpSharp,
 }

@@ -47,19 +47,7 @@ const Task1 = () => {
                             px-4 sm:px-6">
                 <div className="text-3xl font-bold text-black dark:text-white">Component 6</div>
                 <div className="mt-7">
-                    <div className="flex items-center">
-                        <div className="font-bold text-lg leading-normal text-black dark:text-white">Events Today</div>
-                        <button className="text-sm ml-auto cursor-pointer font-semibold leading-normal
-                                        text-c_1564C0 dark:text-dark_0fc9f2">View All</button>
-                    </div>
-                    <div className="grid gap-6 mt-4
-                                    grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-                        {[0, 1, 2].map((item, index) => {
-                            return <div key={`event_card_${index}`}>
-                                        <Component06 />
-                                    </div>
-                        })}
-                    </div>
+                    <Component06 />
                 </div>
             </div>
 
