@@ -35,6 +35,7 @@ import {
     BsFillBellFill,
     BsGenderMale,
     BsGenderFemale,
+    BsFullscreen,
 } from 'react-icons/bs'
 
 import {
@@ -101,6 +102,7 @@ export {
     BsFillBellFill,
     BsGenderMale,
     BsGenderFemale,
+    BsFullscreen,
 
 
     FaDiscord,

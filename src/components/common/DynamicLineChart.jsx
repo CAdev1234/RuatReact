@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { generateUUID } from "../../utils/SimpleFun";
 
 
@@ -125,4 +125,4 @@ const DynamicLineChart = ({className, line_color}) => {
     )
 }
 
-export default DynamicLineChart
+export default React.memo(DynamicLineChart)

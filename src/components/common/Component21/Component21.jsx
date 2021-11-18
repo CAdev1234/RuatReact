@@ -71,10 +71,10 @@ const Component21 = () => {
                                                 border-c_F2F2F2 dark:border-dark_0fc9f2">
                                     <div className="mx-auto h-full flex flex-col">
                                         <div className="mt-auto">
-                                            <BsCalendarEvent className="text-base text-black dark:text-white" style={{strokeWidth: 1}}/>
+                                            <BsCalendarEvent className="text-base text-black dark:text-white" className="stroke-1" />
                                         </div>
                                         <div className="mb-auto mt-7">
-                                            <BsFillBellFill className="text-base text-black dark:text-white" style={{strokeWidth: 1}}/>
+                                            <BsFillBellFill className="text-base text-black dark:text-white" className="stroke-1" />
                                         </div>
                                     </div>
                                 </div>

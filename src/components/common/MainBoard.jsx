@@ -15,6 +15,7 @@ import { ThemeContext } from "../contexts/ThemeContext"
 import ScrollUpBtn from "../ui/ScrollUpBtn"
 import SignInModal from "./SignInModal"
 import SignUpModal from "./SignUpModal"
+import Task3 from "../../pages/Task3"
 
 const MainBoard = () => {
     let menu_li = [
@@ -133,7 +134,7 @@ const MainBoard = () => {
                                     mt-5 sm:mt-0">
                         <div className="rounded-full w-7 h-7 items-center justify-center text-xl cursor-pointer font-bold text-white bg-c_1564C0 dark:bg-dark_0fc9f2
                                         flex sm:hidden">
-                            <BsList style={{strokeWidth: 1}} onClick={() => {openMobileMenuHandler()}}/>
+                            <BsList className="stroke-1" onClick={() => {openMobileMenuHandler()}}/>
                         </div>
                         <div className="block sm:hidden pl-4">
                             <Logo color={`${theme === 'dark' ? '#0fc9f2' : '#1564c0'}`} className=""/>
@@ -166,6 +167,7 @@ const MainBoard = () => {
                     <Routes>
                         <Route path="/task1" element={<Task1 />}></Route>
                         <Route path="/task2" element={<Task2 />}></Route>
+                        <Route path="/task3" element={<Task3 />}></Route>
                     </Routes>
                 </div>
             </div>
@@ -179,7 +181,7 @@ const MainBoard = () => {
                         <div className="flex items-center">
                             <div className="text-lg font-semibold">MENUS</div>
                             <div className="ml-auto text-4xl text-c_1564C0 w-7 h-7 rounded-full bg-white flex items-center justify-center">
-                                <BsX style={{strokeWidth: 0.5}} onClick={() => {closeMobileMenuHandler()}}/>
+                                <BsX className="stroke-0.5" onClick={() => {closeMobileMenuHandler()}}/>
                             </div>
                         </div>
                         <div className="flex flex-col gap-y-10 mt-10">

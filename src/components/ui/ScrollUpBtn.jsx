@@ -32,7 +32,7 @@ const ScrollUpBtn = () => {
                         w-7 sm:w-12
                         h-7 sm:h-12 `}
             onClick={() => {scrollToUpHandler()}}>
-                <BsChevronUp className={`text-sm sm:text-xl`} style={{strokeWidth: 1}}/>
+                <BsChevronUp className={`text-sm sm:text-xl stroke-1`}/>
         </div>
     )
 }

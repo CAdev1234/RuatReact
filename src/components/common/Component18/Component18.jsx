@@ -40,7 +40,7 @@ const Component18 = () => {
                             text-xs sm:text-sm">
                 <div className=" font-semibold">Menu 1</div>
                 <div className="text-8px mx-2">
-                    <BsChevronRight style={{strokeWidth: 1}}/>
+                    <BsChevronRight className="stroke-1" />
                 </div>
                 <div className="text-black font-semibold dark:text-white">Category 2</div>
             </div>
@@ -107,7 +107,7 @@ const Component18 = () => {
                                     text-c_1564C0 dark:text-white">
                         <div className="font-semibold">Load More</div>
                         <div className="ml-2">
-                            <BsChevronDown style={{strokeWidth: 1}}/>
+                            <BsChevronDown className="stroke-1" />
                         </div>
                     </div>
                 </div>

@@ -35,9 +35,9 @@ const Component23 = () => {
         <div className="text-black dark:text-white">
             <div className="flex items-center text-sm leading-normal">
                 <div className="text-c_6E7582">Menu</div>
-                <BsChevronRight className="mx-2 text-c_6E7582 text-8px" style={{strokeWidth: 1}}/>
+                <BsChevronRight className="mx-2 text-c_6E7582 text-8px stroke-1"/>
                 <div className="text-c_6E7582">Submenu 01</div>
-                <BsChevronRight className="mx-2 text-c_6E7582 text-8px" style={{strokeWidth: 1}}/>
+                <BsChevronRight className="mx-2 text-c_6E7582 text-8px stroke-1"/>
                 <div className="font-semibold">Title 01</div>
             </div>
             
@@ -160,7 +160,7 @@ const Component23 = () => {
                                                 h-8 sm:h-9_5
                                                 text-xs sm:text-sm">
                                         <div className="mr-2">{item.title}</div>
-                                        <BsBoxArrowUpRight className="text-c_1564C0 dark:text-white" style={{strokeWidth: 1}}/>
+                                        <BsBoxArrowUpRight className="text-c_1564C0 dark:text-white stroke-1"/>
                                     </div>
                         })}
                     </div>
