@@ -6,6 +6,7 @@ import CrownSvg from '../../assets/img/crown.svg'
 import CoinSearchSvg from '../../assets/img/coin-search.svg'
 import MaleSvg from '../../assets/img/male-icon.svg'
 import FemaleSvg from '../../assets/img/female-icon.svg'
+import LeftImg from '../../assets/img/left-img.svg'
 
 import {
     BsTwitter,
@@ -36,6 +37,7 @@ import {
     BsGenderMale,
     BsGenderFemale,
     BsFullscreen,
+    BsPeopleFill,
 } from 'react-icons/bs'
 
 import {
@@ -74,6 +76,7 @@ export {
     CoinSearchSvg,
     FemaleSvg,
     MaleSvg,
+    LeftImg,
     
     BsTwitter,
     BsInstagram,
@@ -103,6 +106,7 @@ export {
     BsGenderMale,
     BsGenderFemale,
     BsFullscreen,
+    BsPeopleFill,
 
 
     FaDiscord,

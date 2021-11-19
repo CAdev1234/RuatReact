@@ -24,7 +24,9 @@ const Component9 = () => {
         <div>
             <div className="flex items-center">
                 <div className="font-semibold text-22px text-black dark:text-white">Heading Title</div>
-                <div className="ml-auto text-c_1564C0 text-sm leading-normal font-semibold">View All</div>
+                <button className="ml-auto text-sm leading-normal font-semibold
+                                transform hover:scale-105 ease-out duration-700
+                                text-c_1564C0 dark:text-dark_0fc9f2">View All</button>
             </div>
             <div className="mt-9 grid gap-x-6 gap-y-6
                             grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">

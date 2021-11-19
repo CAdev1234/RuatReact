@@ -83,13 +83,13 @@ const SelectInput = ({
                                                     onClick={() => {updateCurrentVal(index)}}> 
                                                     {
                                                         typeof(item) === 'string' && data_type === undefined &&
-                                                        <div className={`py-2 flex items-center justify-center border-c_00080D cursor-pointer ${option_class}`}>
+                                                        <div className={`py-2 flex items-center justify-center border-c_00080D cursor-pointer ${option_class} hover:opacity-75`}>
                                                             {item}
                                                         </div>
                                                     }
                                                     {
                                                         typeof(item) !== 'string' && enable_img !== true && data_type === undefined &&
-                                                        <div className={`py-2 flex items-center justify-center border-c_00080D cursor-pointer ${option_class}`}>
+                                                        <div className={`py-2 flex items-center justify-center border-c_00080D cursor-pointer ${option_class} hover:opacity-75`}>
                                                             {item.title}
                                                         </div>
                                                     }
@@ -97,7 +97,7 @@ const SelectInput = ({
                                                         typeof(item) !== 'string' && enable_img === true && data_type === undefined &&
                                                         <div className={`py-2 flex items-center border-c_00080D cursor-pointer ${option_class}`}>
                                                             <img src={item.img} className={`ml-2 ${img_class}`}></img>
-                                                            <div className={``}>
+                                                            <div className={` hover:opacity-75`}>
                                                                 {item.title}
                                                             </div>
                                                         </div>
@@ -108,7 +108,7 @@ const SelectInput = ({
                                                         <div className={`py-2 flex items-center border-c_00080D cursor-pointer ${option_class}`}>
                                                             <BsGenderFemale className={`ml-3 ${img_class} ${item.title === 'Female' ? 'block' : 'hidden'}`}/>
                                                             <BsGenderMale className={`ml-3 ${img_class} ${item.title === 'Male' ? 'block' : 'hidden'}`} />
-                                                            <div className={``}>
+                                                            <div className={` hover:opacity-75`}>
                                                                 {item.title}
                                                             </div>
                                                         </div>

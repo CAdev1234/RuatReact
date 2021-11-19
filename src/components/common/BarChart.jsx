@@ -1,5 +1,22 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import {
+    BsCalendarEvent
+} from '../icon/IconImage'
 import { generateUUID } from "../../utils/SimpleFun"
+import { ThemeContext } from "../contexts/ThemeContext"
+
+
+function debounce(fn, ms) {
+    let timer
+    return () => {
+        clearTimeout(timer)
+        timer = setTimeout(_ => {
+            timer = null
+            fn.apply(this, arguments)
+        }, ms)
+    };
+}
+
 
 const BarChart = () => {
 
@@ -29,11 +46,21 @@ const BarChart = () => {
         width: window.innerWidth
     })
     const [enableDateOption, setEnableDateOption] = useState([true, new Array(date_option_li.length - 1).fill(false)])
+    const [enableDatePicker, setEnableDatePicker] = useState(false)
+
+    const {theme, setTheme} = useContext(ThemeContext)
 
     const updateChartByDateHandler = (index) => {
         let new_array = new Array(date_option_li.length).fill(false)
         new_array[index] = true
         setEnableDateOption(new_array)
+        setEnableDatePicker(false)
+    }
+
+    const chooseDatePickerHandler = () => {
+        let new_array = new Array(date_option_li.length).fill(false)
+        setEnableDateOption(new_array)
+        setEnableDatePicker(true)
     }
 
     useEffect(() => {
@@ -50,7 +77,6 @@ const BarChart = () => {
             dataShadow.push(yMax);
         }
         let option = {
-            backgroundColor: '#fff',
             xAxis: {
                 data: x_data,
                 axisLabel: {
@@ -92,14 +118,14 @@ const BarChart = () => {
             series: [
                 {
                     type: 'bar',
-                    showBackground: true,
+                    // showBackground: true,
                     itemStyle: {
                         // color: new window.echarts.graphic.LinearGradient(0, 0, 0, 1, [
                         //     { offset: 0, color: '#83bff6' },
                         //     { offset: 0.5, color: '#188df0' },
                         //     { offset: 1, color: '#188df0' }
                         // ])
-                        color: '#7EAFE8'
+                        color: `${theme === 'dark' ? '#0fc9f2' : '#7EAFE8'}`
                     },
                     emphasis: {
                         itemStyle: {
@@ -127,24 +153,48 @@ const BarChart = () => {
         });
 
         bar_chart.setOption(option)
+
+        // update chart when screen width changed
+        const debouncedHandleResize = debounce(function handleResize() {
+            console.log('resize')
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth
+            })
+            bar_chart.resize()
+        }, 1000)
+
+        window.addEventListener('resize', debouncedHandleResize)
+        return () => {
+            window.removeEventListener('resize', debouncedHandleResize)
+        }
     }, [])
 
     return (
         <div className="flex flex-col">
             <div id={chartID} className="w-full" style={{height: 500}}></div>
-            <div className="bg-white flex flex-col">
-                <div className="ml-auto mr-5 flex items-center">
+            <div className="flex flex-col">
+                <div className="ml-auto mr-5 flex items-center gap-2 flex-wrap">
                     {date_option_li.map((item, index) => {
                         return (
-                            <div key={`date_option_${index}`} 
-                                className={`flex items-center justify-center rounded-full text-sm font-semibold px-4 ${enableDateOption[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black'}
+                            <button key={`date_option_${index}`} 
+                                className={`flex items-center justify-center rounded-full text-sm font-semibold px-4 ${enableDateOption[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black dark:text-white'}
                                             cursor-pointer transform hover:scale-105 ease-out duration-700
                                             h-7_5`}
-                                onClick={() => {updateChartByDateHandler(index)}}>{item.title}</div>
+                                onClick={() => {updateChartByDateHandler(index)}}>{item.title}</button>
                         )
                     })}
+                    <button className={`flex items-center justify-center rounded-full font-semibold ${enableDatePicker === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black dark:text-white'}
+                                    transform hover:scale-105 ease-out duration-700
+                                    text-xs sm:text-sm
+                                    px-1 sm:px-4
+                                    h-6_5 sm:h-7_5`}
+                        onClick={() => {chooseDatePickerHandler()}}>
+                        <BsCalendarEvent className="stroke-1" />
+                    </button>
                 </div>
             </div>
+            
         </div>
     )
 }

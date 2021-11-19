@@ -1,4 +1,4 @@
-import { useState } from 'react/cjs/react.development'
+import { useEffect, useState } from 'react'
 import {
     BsX,
     BsCalendarEvent,
@@ -6,6 +6,8 @@ import {
     FemaleSvg
 } from '../icon/IconImage'
 import SelectInput from '../ui/SelectInput'
+import { validateEmail } from '../../utils/SimpleFun'
+import MyDatePicker from '../ui/MyDatePicker/MyDatePicker'
 
 const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
 
@@ -21,6 +23,51 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
 
     const [country, setCountry] = useState(country_li[0])
     const [gender, setGender] = useState(gender_li[0])
+    const [fname, setFName] = useState('')
+    const [lname, setLName] = useState('')
+    const [uname, setUName] = useState('')
+    const [birth, setBirth] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [userCountry, setUserCountry] = useState('')
+    const [userGender, setUserGender] = useState('')
+    const [enablePolicy, setEnablePolicy] = useState(false)
+    const [enableCustomPolicy, setEnableCustomPolicy] = useState(false)
+    const [disabledSignUpBtn, setDisabledSignUpBtn] = useState(true)
+
+    const getEmailHandler = (str) => {
+        setEmail(str)
+    }
+
+    const getPasswordHandler = (str) => {
+        setPassword(str)
+    }
+
+    const getFNameHandler = (str) => {
+        setFName(str)
+    }
+
+    const getLNameHandler = (str) => {
+        setLName(str)
+    }
+    
+    const getUNameHandler = (str) => {
+        setUName(str)
+    }
+
+    const getBirthHandler = (str) => {
+        setBirth(str)
+    }
+
+    
+
+    useEffect(() => {
+        if (validateEmail(email) && password !== '' && fname !== '' && lname !== '' && birth !== '' && uname !== '' && enablePolicy && enableCustomPolicy) {
+            setDisabledSignUpBtn(false)
+        }else {
+            setDisabledSignUpBtn(true)
+        }
+    }, [fname, lname, uname, birth, email, password, enablePolicy, enableCustomPolicy])
 
     return (
         <div className="absolute top-0 left-0 bg-black bg-opacity-50 dark:bg-opacity-80 w-full h-screen flex flex-col text-black dark:text-white
@@ -36,80 +83,111 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                 <div className="grid grid-cols-2 gap-x-3 mt-15">
                     <div className="flex flex-col">
                         <div className="flex">
-                            <div className="text-sm leading-normal font-semibold">First Name</div>
-                            <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                            <div className="relative text-sm leading-normal font-semibold">First Name
+                                {fname === '' &&
+                                    <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                                }
+                            </div>
+                            
                         </div>
                         <input type="text" 
                             className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal
                                     border-c_E8EBF1 dark:border-dark_0fc9f2
                                     bg-white dark:bg-transparent
-                                    text-black dark:text-dark_0fc9f2"/>
+                                    text-black dark:text-dark_0fc9f2"
+                            onChange={(event) => {getFNameHandler(event.target.value)}}/>
                     </div>
                     <div className="flex flex-col">
                         <div className="flex">
-                            <div className="text-sm leading-normal font-semibold">Last Name</div>
-                            <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                            <div className="relative text-sm leading-normal font-semibold">Last Name
+                            {lname === '' &&
+                                <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                            }    
+                            </div>
+                            
                         </div>
                         <input type="text" 
                             className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal
                                     border-c_E8EBF1 dark:border-dark_0fc9f2
                                     bg-white dark:bg-transparent
-                                    text-black dark:text-dark_0fc9f2"/>
+                                    text-black dark:text-dark_0fc9f2"
+                            onChange={(event) => {getLNameHandler(event.target.value)}}/>
                     </div>
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-x-3">
                     <div className="flex flex-col">
                         <div className="flex">
-                            <div className="text-sm leading-normal font-semibold">User Name</div>
-                            <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                            <div className="relative text-sm leading-normal font-semibold">Username
+                            {uname === '' &&
+                                <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                            }
+                            </div>
+                            
                         </div>
                         <input type="text" 
                             className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal
                                     border-c_E8EBF1 dark:border-dark_0fc9f2
                                     bg-white dark:bg-transparent
-                                    text-black dark:text-dark_0fc9f2"/>
+                                    text-black dark:text-dark_0fc9f2"
+                            onChange={(event) => {getUNameHandler(event.target.value)}}/>
                     </div>
                     <div className="flex flex-col">
                         <div className="flex">
-                            <div className="text-sm leading-normal font-semibold">Date of birth</div>
-                            <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                            <div className="relative text-sm leading-normal font-semibold">Date of birth
+                            {birth === '' &&
+                                <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                            }
+                            </div>
+                            
                         </div>
                         <div className="mt-1 relative h-9_5">
-                            <input type="text" 
+                            {/* <input type="date" 
                                 className="h-full w-full pl-3 pr-5 border rounded-lg bg-transparent text-xs leading-normal
                                         border-c_E8EBF1 dark:border-dark_0fc9f2
                                         bg-white dark:bg-transparent
-                                        text-black dark:text-dark_0fc9f2"/>
+                                        text-black dark:text-dark_0fc9f2"
+                                onChange={(event) => {getBirthHandler(event.target.value)}}/>
                             <div className="absolute top-0 right-2 h-full flex flex-col">
                                 <BsCalendarEvent className="my-auto"/>
-                            </div>
+                            </div> */}
+                            <MyDatePicker input_cn="w-full h-5_5 sm:h-9_5" input_bg_cn="bg-white" returnVal={getBirthHandler} datepicker_type="single"/>
                         </div>
                     </div>
                 </div>
 
                 <div className="flex flex-col mt-3">
                     <div className="flex">
-                        <div className="text-sm leading-normal font-semibold">Email ID</div>
-                        <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                        <div className="relative text-sm leading-normal font-semibold">Email ID
+                        {!validateEmail(email) &&
+                            <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                        }
+                        </div>
+                        
                     </div>
                     <input type="text" 
                         className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal
                                 border-c_E8EBF1 dark:border-dark_0fc9f2
                                  bg-white dark:bg-transparent
-                                text-black dark:text-dark_0fc9f2"/>
+                                text-black dark:text-dark_0fc9f2"
+                        onChange={(event) => {getEmailHandler(event.target.value)}}/>
                 </div>
 
                 <div className="flex flex-col mt-3">
                     <div className="flex">
-                        <div className="text-sm leading-normal font-semibold">Password</div>
-                        <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                        <div className="relative text-sm leading-normal font-semibold">Password
+                        {password === '' &&
+                            <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                        }
+                        </div>
+                        
                     </div>
                     <input type="password" 
                         className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal
                                 border-c_E8EBF1 dark:border-dark_0fc9f2
                                  bg-white dark:bg-transparent
-                                text-black dark:text-dark_0fc9f2"/>
+                                text-black dark:text-dark_0fc9f2"
+                        onChange={(event) => {getPasswordHandler(event.target.value)}}/>
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-x-3">
@@ -150,7 +228,7 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                 </div>
 
                 <div className="mt-6 flex font-semibold text-xs leading-normal cursor-pointer">
-                    <input type="checkbox" id="terms_checkbox" />
+                    <input type="checkbox" id="terms_checkbox" onChange={(event) => {setEnablePolicy(event.target.checked)}}/>
                     <label className="ml-2" htmlFor="terms_checkbox">I have read and accept the
                         <span className="ml-1 text-c_1564C0 dark:text-dark_0fc9f2 transform hover:scale-105 ease-out duration-700">terms and conditions.</span>
                     </label>
@@ -158,14 +236,13 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                 </div>
 
                 <div className="mt-4 flex cursor-pointer">
-                    <input type="checkbox" id="check_box" />
+                    <input type="checkbox" id="check_box" onChange={(event) => {setEnableCustomPolicy(event.target.checked)}}/>
                     <label htmlFor="check_box" className="ml-2 font-semibold text-xs leading-normal">Lorem ipsum dolor sit amet, consectetur.</label>
                 </div>
 
                 <div className="mt-5_5">
-                    <button className="h-9_5 w-full flex items-center justify-center text-xs font-semibold leading-normal rounded-lg
-                                    bg-c_E8EBF1 dark:bg-dark_0fc9f2
-                                    transform hover:scale-105 ease-out duration-700">Create an account</button>
+                    <button className={`h-9_5 w-full flex items-center justify-center text-xs font-semibold leading-normal rounded-lg
+                                    ${disabledSignUpBtn === true ? 'bg-c_E8EBF1 text-c_BCC3CF' : 'transform hover:scale-105 ease-out duration-700 bg-c_1564C0 text-white dark:bg-dark_0fc9f2'}`}>Create an account</button>
                 </div>
 
                 <div className="mt-4">
