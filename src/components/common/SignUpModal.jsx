@@ -151,7 +151,7 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                             <div className="absolute top-0 right-2 h-full flex flex-col">
                                 <BsCalendarEvent className="my-auto"/>
                             </div> */}
-                            <MyDatePicker input_cn="w-full h-5_5 sm:h-9_5" input_bg_cn="bg-white" returnVal={getBirthHandler} datepicker_type="single"/>
+                            <MyDatePicker input_cn="w-full h-9_5" input_bg_cn="bg-white" picker_pos_cn="right-0 sm:left-0" returnVal={getBirthHandler} datepicker_type="single"/>
                         </div>
                     </div>
                 </div>
@@ -193,8 +193,12 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                 <div className="mt-3 grid grid-cols-2 gap-x-3">
                     <div className="flex flex-col">
                         <div className="flex">
-                            <div className="text-sm leading-normal font-semibold">Select country</div>
-                            <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                            <div className="relative text-sm leading-normal font-semibold">Select country
+                                {/* {country !== '' &&
+                                    <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                                } */}
+                            </div>
+                            
                         </div>
                         <SelectInput 
                             className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal flex items-center
@@ -210,8 +214,12 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                     </div>
                     <div className="flex flex-col">
                         <div className="flex">
-                            <div className="text-sm leading-normal font-semibold">Select Gender</div>
-                            <div className="ml-1 text-c_C85151 font-semibold">*</div>
+                            <div className="relative text-sm leading-normal font-semibold">Select Gender
+                                {/* {gender !== '' &&
+                                    <div className="absolute top-0 -right-3 text-c_C85151 font-semibold">*</div>
+                                } */}
+                            </div>
+                            
                         </div>
                         <SelectInput 
                             className="mt-1 h-9_5 px-3 border rounded-lg bg-transparent text-xs leading-normal flex items-center

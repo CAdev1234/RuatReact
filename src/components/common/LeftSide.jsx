@@ -1,9 +1,8 @@
-import { useContext, useEffect } from "react"
+import { useContext, useState } from "react"
 import { 
     Logo
 } from "../icon/IconImage"
 import { ThemeContext } from '../contexts/ThemeContext'
-import { useState } from "react/cjs/react.development"
 
 const LeftSide = ({className}) => {
     let menu_li = [

@@ -31,6 +31,7 @@ const Component20 = () => {
     const [enableSort, setEnableSort] = useState(false)
     const [currentSort, setCurrentSort] = useState(sort_li[0])
     const [rangeDate, setRangeDate] = useState('')
+    
 
     const changeStausHandler = (index) => {
         let new_array = new Array(status_li.length).fill(false)
@@ -69,25 +70,11 @@ const Component20 = () => {
                 <div className="items-center
                                 block 2xl:flex
                                 mt-5 sm:mt-6">
-                    <div className="flex items-center">
-                        <MyDatePicker input_cn="relative w-48 h-5_5 sm:h-7_5" input_bg_cn="bg-white" datepicker_type="range" returnVal={getRangeDateHandler}/>
-                        {/* <div className="w-48 relative
-                                        h-5_5 sm:h-7_5">
-                            <input type="text" 
-                                    className="h-full w-full flex items-center pl-3 rounded-lg border font-semibold leading-normal
-                                            border-c_E8EBF1 dark:border-dark_0fc9f2
-                                            text-black dark:text-dark_0fc9f2
-                                            dark:bg-transparent 
-                                                text-9px sm:text-xs" 
-                                    defaultValue="14/10/2021 - 14/11/2021" />
-                            <div className="absolute top-0 right-3 h-full flex flex-col cursor-pointer">
-                                <BsCalendarEvent className="my-auto text-xs sm:text-lg text-black dark:text-dark_0fc9f2"/>
-                            </div>
-                            <div className="absolute top-9 left-0 w-full z-10">
-                                
-                            </div>
-                        </div> */}
-                        <div className="ml-3">
+                    <div className="flex items-center flex-wrap gap-y-4">
+                        <MyDatePicker input_cn="relative mr-3 w-48 h-5_5 sm:h-7_5" input_bg_cn="bg-white" picker_pos_cn="left-0 sm:right-0" datepicker_type="range" returnVal={getRangeDateHandler}/>
+                        
+                        <MyDatePicker input_cn="relative mr-3 w-48 h-5_5 sm:h-7_5" input_bg_cn="bg-white" picker_pos_cn="left-0 sm:right-0" datepicker_type="range" returnVal={getRangeDateHandler}/>
+                        <div className="">
                             <input type="text" 
                                     className="w-36 flex items-center font-semibold pl-3 rounded-lg border bg-transparent
                                             placeholder-c_BCC3CF
@@ -158,7 +145,7 @@ const Component20 = () => {
 
                             {enableSort && 
                                 <ClickOutside active={enableSort} onClick={() => setEnableSort(false)}>
-                                    <div className="absolute top-9 w-30 text-sm z-10
+                                    <div className="absolute top-9 left-0 w-30 text-sm z-10
                                                     bg-white dark:bg-gray-900 shadow-card dark:shadow-dark_card text-black dark:text-dark_0fc9f2">
                                         {sort_li.map((item, index) => {
                                             return (
