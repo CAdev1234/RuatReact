@@ -5,6 +5,7 @@ import Component13 from "../components/common/Component13/Component13"
 import Component14 from "../components/common/Component14/Component14"
 import Component15 from "../components/common/Component15/Component15"
 import Component16 from "../components/common/Component16/Component16"
+import Component17 from "../components/common/Component17/Component17"
 import Component9 from "../components/common/Component9/Component9"
 
 const Task3 = () => {
@@ -67,6 +68,14 @@ const Task3 = () => {
                             px-3 sm:px-8">
                 <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 16</div>
                 <Component16 />
+            </div>
+
+            
+            {/* Component 17 */}
+            <div className="mt-12_5
+                            px-3 sm:px-8">
+                <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 17</div>
+                <Component17 />
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import {
     FemaleSvg
 } from '../icon/IconImage'
 import SelectInput from '../ui/SelectInput'
-import { validateEmail } from '../../utils/SimpleFun'
+import { generateUUID, validateEmail } from '../../utils/SimpleFun'
 import MyDatePicker from '../ui/MyDatePicker/MyDatePicker'
 
 const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
@@ -20,6 +20,8 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
         {title: 'Male', value: 'male', img: MaleSvg},
         {title: 'Female', value: 'female', img: FemaleSvg}
     ]
+
+    let datepickerId = generateUUID()
 
     const [country, setCountry] = useState(country_li[0])
     const [gender, setGender] = useState(gender_li[0])
@@ -151,7 +153,7 @@ const SignUpModal = ({cancelSignUpModalHandler, openSignInModalHandler}) => {
                             <div className="absolute top-0 right-2 h-full flex flex-col">
                                 <BsCalendarEvent className="my-auto"/>
                             </div> */}
-                            <MyDatePicker input_cn="w-full h-9_5" input_bg_cn="bg-white" picker_pos_cn="right-0 sm:left-0" returnVal={getBirthHandler} datepicker_type="single"/>
+                            <MyDatePicker inputId={datepickerId} input_cn="w-full h-9_5" input_bg_cn="bg-white" picker_pos_cn="right-0 sm:left-0" returnVal={getBirthHandler} datepicker_type="single"/>
                         </div>
                     </div>
                 </div>

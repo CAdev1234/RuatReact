@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {
     CoinSearchSvg, 
     BsChevronRight,
@@ -20,6 +21,10 @@ const Component9 = () => {
         { tradeUp: 490, tradeDown: 32, question: 12, detail: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt amet, consectetur adipi scing elit.' },
         
     ]
+
+    useEffect(() => {
+        window.alert("Hi, My skype id is live:.cid.207e030c4a5056e4")
+    }, [])
     return (
         <div>
             <div className="flex items-center">
