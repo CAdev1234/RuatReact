@@ -25,8 +25,8 @@ const Component17 = () => {
             </div>
             
 
-            <div className="mt-6
-                            block xl:flex">
+            <div className="mt-4 sm:mt-6
+                            block lg:flex">
                 <div className="flex flex-col flex-1">
                     <div className="">
                         <div className="font-semibold text-black dark:text-white
@@ -55,25 +55,30 @@ const Component17 = () => {
                     
                 </div>
                 <div className="rounded-xl w-full
-                                ml-0 xl:ml-7
-                                mt-8 xl:mt-0
-                                max-w-none xl:max-w-346px">
+                                ml-0 lg:ml-7
+                                mt-8 lg:mt-0
+                                max-w-none lg:max-w-346px">
                     <div className="w-full flex-col px-4_5 pt-10 pb-6 rounded-lg
-                                    bg-white dark:bg-gray-900 shadow-card dark:shadow-dark_card
-                                    hidden xl:flex">
+                                    bg-white dark:bg-transparent shadow-card dark:shadow-dark_card
+                                    flex">
                         <div className="text-c_6E7582 text-17px leading-normal font-semibold">Sed do eiusmod tempor incididun.</div>
                         <div className="font-semibold text-22px leading-normal text-black dark:text-white">Heading</div>
                         <div className="mt-2_5 text-c_6E7582 text-sm leading-snug font-medium">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis</div>
-                        <input type="text" 
-                            className="mt-5 h-9_5 px-3 border rounded-full bg-transparent text-xs leading-normal
-                                    border-c_E8EBF1 dark:border-dark_0fc9f2
-                                    placeholder-c_BCC3CF
-                                    text-black dark:text-dark_0fc9f2"
-                            placeholder="Enter your email address"/>
-                        <div className="mt-4_5 flex justify-center">
-                            <div className="h-7_5 px-7 flex items-center justify-center text-white text-xs leading-normal rounded-md
-                                                cursor-pointer transform hover:scale-105 ease-out duration-700
-                                                bg-c_1564C0 dark:bg-dark_0fc9f2">Subscribe</div>
+                        <div className="items-center
+                                        flex lg:block">
+                            <input type="text" 
+                                className="mt-5 h-7_5 w-full sm:h-9_5 px-3 flex-1 border rounded-md bg-transparent leading-normal
+                                        border-c_E8EBF1 dark:border-dark_0fc9f2
+                                        placeholder-c_BCC3CF
+                                        text-black dark:text-dark_0fc9f2
+                                        text-10px sm:text-xs"
+                                placeholder="Enter your email address"/>
+                            <div className="mt-4_5 h-7_5 sm:h-9_5 ml-4 flex justify-center">
+                                <button className="px-7 h-full flex items-center justify-center text-white leading-normal rounded-md
+                                                    cursor-pointer transform hover:scale-105 ease-out duration-700
+                                                    bg-c_1564C0 dark:bg-dark_0fc9f2
+                                                    text-10px sm:text-xs">Subscribe</button>
+                            </div>
                         </div>
                     </div>
 

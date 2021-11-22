@@ -69,7 +69,7 @@ const Component15 = () => {
 
 
             <div className="mt-20 relative rounded-lg w-full h-32 mx-auto max-w-screen-md
-                            bg-white dark:bg-gray-900 shadow-card dark:shadow-dark_card">
+                            bg-white dark:bg-transparent shadow-card dark:shadow-dark_card">
                 <div className="absolute -top-3 left-0 flex items-center w-full">
                     <div className="h-6_5 px-4 mx-auto flex justify-center items-center font-semibold text-xs rounded-full border
                                     text-c_1564C0 dark:text-dark_0fc9f2 border-c_1564C0 dark:border-dark_0fc9f2 bg-white dark:bg-gray-900">- Advertisement -</div>

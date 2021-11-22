@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import Component10 from "../components/common/Component10/Component10"
 import Component11 from "../components/common/Component11/Component11"
 import Component12 from "../components/common/Component12/Component12"
@@ -9,6 +10,9 @@ import Component17 from "../components/common/Component17/Component17"
 import Component9 from "../components/common/Component9/Component9"
 
 const Task3 = () => {
+    useEffect(() => {
+        window.alert('My skype id is live:.cid.207e030c4a5056e4')
+    }, [])
     return (
         <div>
             {/* Component 9 */}

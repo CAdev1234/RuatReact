@@ -46,8 +46,9 @@ const Component10 = () => {
                 </div>
             </div>
 
-            <div className="mt-9 gap-x-4 gap-y-4
-                            grid grid-cols-3 sm:flex sm:items-center sm:flex-wrap">
+            <div className="gap-x-4 gap-y-4
+                            grid grid-cols-3 sm:flex sm:items-center sm:flex-wrap
+                            mt-7 sm:mt-9">
                 {coin_info_li.map((item, index) => {
                     return (
                         <div key={`coin_card_${index}`} 
@@ -55,7 +56,7 @@ const Component10 = () => {
                                         w-full sm:w-42_5">
                             <div className="aspect-w-1 aspect-h-1">
                                 <div className="rounded-lg flex flex-col text-center
-                                                bg-white dark:bg-gray-900
+                                                bg-white dark:bg-transparent
                                                 shadow-card dark:shadow-dark_card
                                                 py-2 sm:py-4">
                                     <div className="flex items-center mx-auto">

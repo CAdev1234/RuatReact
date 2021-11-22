@@ -174,13 +174,17 @@ const BarChart = () => {
         <div className="flex flex-col">
             <div id={chartID} className="w-full" style={{height: 500}}></div>
             <div className="flex flex-col">
-                <div className="ml-auto mr-5 flex items-center gap-2 flex-wrap">
+                <div className="flex items-center gap-y-2 flex-wrap
+                                mr-auto sm:mr-5
+                                ml-auto
+                                gap-x-1 sm:gap-x-2">
                     {date_option_li.map((item, index) => {
                         return (
                             <button key={`date_option_${index}`} 
-                                className={`flex items-center justify-center rounded-full text-sm font-semibold px-4 ${enableDateOption[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black dark:text-white'}
+                                className={`flex items-center justify-center rounded-full font-semibold px-4 ${enableDateOption[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black dark:text-white'}
                                             cursor-pointer transform hover:scale-105 ease-out duration-700
-                                            h-7_5`}
+                                            h-7_5
+                                            text-xs sm:text-sm`}
                                 onClick={() => {updateChartByDateHandler(index)}}>{item.title}</button>
                         )
                     })}

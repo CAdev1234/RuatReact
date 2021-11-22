@@ -28,10 +28,11 @@ const Component12 = () => {
                 </div>
             </div>
             <div className="mt-8 rounded-lg
-                            bg-white dark:bg-gray-900 dark:shadow-dark_card">
+                            bg-white dark:bg-transparent dark:shadow-dark_card">
                 <BarChart />
-                <div className="pt-7">
-                    <div className="h-px bg-c_F2F2F2 w-full"></div>
+                <div className="pt-0 sm:pt-7">
+                    <div className="h-px bg-c_F2F2F2 w-full
+                                    hidden sm:block"></div>
                     <div className="py-10 grid px-6 gap-y-6
                                     grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6">
                         {item_li.map((item, index) => {

@@ -15,11 +15,15 @@ const Component16 = () => {
                                     text-2xl sm:text-4xl">Unt ut labore et dolore</div>
                     <div className="text-c_6E7582 max-w-sm
                                     text-10px sm:text-sm">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                    <div className="mt-5 flex items-center h-9_5">
+                    <div className="mt-5 flex items-center
+                                    h-7_5 sm:h-9_5">
                         <input type="text" placeholder="Enter your email address"
-                                className="h-full flex-1 rounded-lg border border-c_E8EBF1 placeholder-c_BCC3CF text-sm flex items-center px-4" />
-                        <button className="ml-3 h-full flex items-center justify-center px-4 rounded-lg text-white text-sm
+                                className="h-full flex-1 rounded-lg border placeholder-c_BCC3CF flex items-center px-4
+                                            bg-white dark:bg-transparent border-c_E8EBF1 dark:border-dark_0fc9f2
+                                            text-10px sm:text-sm" />
+                        <button className="ml-3 h-full flex items-center justify-center px-4 rounded-lg text-white
                                             bg-c_1564C0 dark:bg-dark_0fc9f2
+                                            text-10px sm:text-sm
                                             transform hover:scale-105 ease-out duration-700">Subscribe now</button>
                     </div>
                     </div>

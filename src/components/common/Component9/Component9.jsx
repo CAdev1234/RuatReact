@@ -28,8 +28,9 @@ const Component9 = () => {
                                 transform hover:scale-105 ease-out duration-700
                                 text-c_1564C0 dark:text-dark_0fc9f2">View All</button>
             </div>
-            <div className="mt-9 grid gap-x-6 gap-y-6
-                            grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-x-6 gap-y-6
+                            grid-cols-1 lg:grid-cols-2 xl:grid-cols-3
+                            mt-4_5 sm:mt-9">
                 {heading_card_li.map((item, index) => {
                     return <div className="flex flex-col p-3 rounded-lg cursor-pointer transform hover:scale-105 ease-out duration-700
                                             shadow-card dark:shadow-dark_card
