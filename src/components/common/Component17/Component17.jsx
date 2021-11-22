@@ -25,7 +25,8 @@ const Component17 = () => {
             </div>
             
 
-            <div className="mt-6 flex">
+            <div className="mt-6
+                            block xl:flex">
                 <div className="flex flex-col flex-1">
                     <div className="">
                         <div className="font-semibold text-black dark:text-white
@@ -53,7 +54,10 @@ const Component17 = () => {
                                     text-xs sm:text-sm">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Sed do eiusmod tempor incididunt ut.</div>
                     
                 </div>
-                <div className="ml-7 rounded-lg max-w-346px">
+                <div className="rounded-xl w-full
+                                ml-0 xl:ml-7
+                                mt-8 xl:mt-0
+                                max-w-none xl:max-w-346px">
                     <div className="w-full flex-col px-4_5 pt-10 pb-6 rounded-lg
                                     bg-white dark:bg-gray-900 shadow-card dark:shadow-dark_card
                                     hidden xl:flex">

@@ -1,5 +1,4 @@
 module.exports = {
-  mode: "jit",
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -75,6 +74,7 @@ module.exports = {
         '4_5': '18px',
         '5_5': '22px',
         '7_5': '30px',
+        '9_5': '38px',
         '10_5': '42px',
         '12_5': '50px',
         '14_5': '58px',

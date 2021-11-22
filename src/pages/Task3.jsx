@@ -70,7 +70,6 @@ const Task3 = () => {
                 <Component16 />
             </div>
 
-            
             {/* Component 17 */}
             <div className="mt-12_5
                             px-3 sm:px-8">

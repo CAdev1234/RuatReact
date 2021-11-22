@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { generateUUID } from "../../../utils/SimpleFun"
 
 import {
     BsCalendarEvent,
@@ -25,8 +24,6 @@ const Component20 = () => {
     let category_li = ['Categories All', 'option 2', 'option 3']
     let sort_li = ['Sort Option 1', 'Sort Option 2', 'Sort Option 3', 'Sort Option 4', 'Sort Option 5']
     
-    let datepickerId = generateUUID()
-
     const [status, setStatus] = useState([true, new Array(status_li.length - 1).fill(false)])
     const [coinOption, setCoinOption] = useState(coin_option_li[0])
     const [exchage, setExchange] = useState(exchange_li[0])
@@ -74,7 +71,9 @@ const Component20 = () => {
                                 block 2xl:flex
                                 mt-5 sm:mt-6">
                     <div className="flex items-center flex-wrap gap-y-4">
-                        <MyDatePicker inputId={datepickerId} input_cn="relative mr-3 w-48 h-5_5 sm:h-7_5" input_bg_cn="bg-white" picker_pos_cn="left-0 sm:right-0" datepicker_type="range" returnVal={getRangeDateHandler}/>
+                        <MyDatePicker input_cn="relative mr-3 w-48 h-5_5 sm:h-7_5" input_bg_cn="bg-white" picker_pos_cn="left-0 sm:right-0" datepicker_type="range" returnVal={getRangeDateHandler}/>
+                        
+                        <MyDatePicker input_cn="relative mr-3 w-48 h-5_5 sm:h-7_5" input_bg_cn="bg-white" picker_pos_cn="left-0 sm:right-0" datepicker_type="range" returnVal={getRangeDateHandler}/>
                         <div className="">
                             <input type="text" 
                                     className="w-36 flex items-center font-semibold pl-3 rounded-lg border bg-transparent

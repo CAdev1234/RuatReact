@@ -2,17 +2,14 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './MyDatePicker.css';
 import {
-    BsCalendarEvent,
-    BsChevronDoubleLeft,
-    BsChevronDoubleRight,
-    BsChevronLeft,
-    BsChevronRight
+    BsCalendarEvent
 } from '../../icon/IconImage'
+
 
 let oneDay = 60 * 60 * 24 * 1000;
 let todayTimestamp = Date.now() - (Date.now() % oneDay) + (new Date().getTimezoneOffset() * 1000 * 60);
-
-
+let inputRef = React.createRef()
+let datepickerRef = React.createRef()
 
 export default class MyDatePicker extends Component {
     // props
@@ -32,7 +29,6 @@ export default class MyDatePicker extends Component {
         let year = date.getFullYear();
         let month = date.getMonth();
         this.state = {
-            
             year,
             month,
             selectedDay: todayTimestamp,
@@ -46,7 +42,7 @@ export default class MyDatePicker extends Component {
     }
 
     componentDidMount() {
-        // window.addEventListener('click', this.addBackDrop);
+        window.addEventListener('click', this.addBackDrop);
         if (this.props.datepicker_type === 'single') {
             this.setDateToInput(this.state.selectedDay);
         }else {
@@ -56,7 +52,20 @@ export default class MyDatePicker extends Component {
     }
 
     componentWillUnmount() {
-        // window.removeEventListener('click', this.addBackDrop);
+        window.removeEventListener('click', this.addBackDrop);
+    }
+
+    addBackDrop = e => {
+        // if(this.state.showDatePicker && !ReactDOM.findDOMNode(this).contains(e.target)) {
+        //     this.showDatePicker(false);
+        // }
+        console.log("111=", datepickerRef)
+        if(this.state.showDatePicker && !datepickerRef.current.contains(e.target)) {
+            this.showDatePicker(false);
+        }
+        // if(this.state.showDatePicker) {
+        //     this.showDatePicker(false);
+        // }
     }
 
     showDatePicker =(showDatePicker=true)=> {
@@ -158,8 +167,7 @@ export default class MyDatePicker extends Component {
     }
 
     updateDateFromInput =()=> {
-        // let dateValue = inputRef.current.value;
-        let dateValue = document.querySelector(`#${this.props.inputId}`).value
+        let dateValue = inputRef.current.value;
         let dateData = this.getDateFromDateString(dateValue);
         if(dateData !== null) { 
             this.setDate(dateData);
@@ -173,16 +181,13 @@ export default class MyDatePicker extends Component {
 
     setDateToInput =(timestamp)=> {
         let dateString = this.getDateStringFromTimestamp(timestamp);
-        // inputRef.current.value = dateString;
-        document.getElementById(this.props.inputId).value = dateString
-        console.log(document.getElementById(this.props.inputId))
+        inputRef.current.value = dateString;
     }
 
     setDateToInputByRange = (start_timestamp, end_timestamp) => {
         let startDateStr = this.getDateStringFromTimestamp(start_timestamp)
         let endDateStr = this.getDateStringFromTimestamp(end_timestamp)
-        document.getElementById(this.props.inputId).value = `${startDateStr} - ${endDateStr}`
-        // inputRef.current.value = `${startDateStr} - ${endDateStr}`
+        inputRef.current.value = `${startDateStr} - ${endDateStr}`
         this.props.returnVal(`${startDateStr} - ${endDateStr}`)
     }
 
@@ -253,10 +258,7 @@ export default class MyDatePicker extends Component {
             return (
                 <div className={'c-day-container ' + (day.month !== 0 ? ' disabled' : '') + (this.isCurrentDay(day) ? ' highlight' : '') + (this.isSelectedDay(day) ? ' highlight-blue' : '')} key={index}>
                     <div className='cdc-day'>
-                        <span className={`${day.month !== 0 ? ' text-c_6E7582 bg-gray-500 dark:bg-gray-700' : 'text-black dark:text-white'} 
-                                        ${this.isSelectedDay(day) && day.month === 0 ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : ' '}
-                                        ${this.isCurrentDay(day) ? 'bg-c_50BC2E dark:bg-c_64A879' : ''}`} 
-                            onClick={()=>this.onDateClick(day)}>
+                        <span className={`${day.month !== 0 ? ' text-c_6E7582' : 'text-black dark:text-white'} ${this.isSelectedDay(day) && day.month === 0 ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : ' '}`} onClick={()=>this.onDateClick(day)}>
                             {day.date}
                         </span>
                     </div>
@@ -278,14 +280,14 @@ export default class MyDatePicker extends Component {
 
     render() {
         return (
-            <div className='MyDatePicker'>
+            <div className='MyDatePicker' ref={datepickerRef}>
                 {/* <div className='mdp-input'  onClick={()=> this.showDatePicker(!this.state.showDatePicker)}>
                     <input type='date' onChange={this.updateDateFromInput} ref={inputRef}/>
                 </div> */}
 
                 <div className={`relative ${this.props.input_cn}`}
                     onClick={()=> this.showDatePicker(!this.state.showDatePicker)}>
-                    <input type="text" disabled={true} onChange={this.updateDateFromInput} id={this.props.inputId} 
+                    <input type="text" disabled={true} ref={inputRef} onChange={this.updateDateFromInput} 
                             className={`h-full w-full flex items-center pl-3 rounded-lg border font-semibold leading-normal
                             border-c_E8EBF1 dark:border-dark_0fc9f2
                             text-black dark:text-dark_0fc9f2
@@ -300,15 +302,12 @@ export default class MyDatePicker extends Component {
                         <div className='mdpc-head'>
                             <div className='mdpch-button'>
                                 <div className='mdpchb-inner bg-c_E8EBF1 dark:bg-dark_0fc9f2' onClick={()=> this.setYear(-1)}>
-                                    {/* <span className='mdpchbi-left-arrows border-c_6E7582 dark:border-white'> */}
-                                        <BsChevronDoubleLeft className="stroke-0.5 text-c_6E7582 dark:text-white cursor-pointer" />
-                                    {/* </span> */}
+                                    <span className='mdpchbi-left-arrows border-c_6E7582 dark:border-white'></span>
                                 </div>
                             </div>
                             <div className='mdpch-button'>
                                 <div className='mdpchb-inner bg-c_E8EBF1 dark:bg-dark_0fc9f2' onClick={()=> this.setMonth(-1)}>
-                                    {/* <span className='mdpchbi-left-arrow border-c_6E7582 dark:border-white'></span> */}
-                                    <BsChevronLeft className="stroke-0.5 text-c_6E7582 dark:text-white cursor-pointer"/>
+                                    <span className='mdpchbi-left-arrow border-c_6E7582 dark:border-white'></span>
                                 </div>
                             </div>
                             <div className='mdpch-container'>
@@ -317,15 +316,12 @@ export default class MyDatePicker extends Component {
                             </div>
                             <div className='mdpch-button'>
                                 <div className='mdpchb-inner bg-c_E8EBF1 dark:bg-dark_0fc9f2' onClick={()=> this.setMonth(1)}>
-                                    {/* <span className='mdpchbi-right-arrow border-c_6E7582 dark:border-white'></span> */}
-                                    <BsChevronRight className="stroke-0.5 text-c_6E7582 dark:text-white cursor-pointer"/>
+                                    <span className='mdpchbi-right-arrow border-c_6E7582 dark:border-white'></span>
                                 </div>
                             </div>
                             <div className='mdpch-button' onClick={()=> this.setYear(1)}>
                                 <div className='mdpchb-inner bg-c_E8EBF1 dark:bg-dark_0fc9f2'>
-                                    {/* <span className='mdpchbi-right-arrows border-c_6E7582 dark:border-white'> */}
-                                        <BsChevronDoubleRight className="stroke-0.5 text-c_6E7582 dark:text-white cursor-pointer"/>
-                                    {/* </span> */}
+                                    <span className='mdpchbi-right-arrows border-c_6E7582 dark:border-white'></span>
                                 </div>
                             </div>
                         </div>

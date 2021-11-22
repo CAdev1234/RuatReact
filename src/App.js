@@ -1,9 +1,11 @@
-import "../src/assets/css/tailwind-build.css"
+import './assets/css/tailwind.css'
 
+import { BrowserRouter, Route } from 'react-router-dom'
 import Footer from './components/common/Footer'
 import LeftSide from './components/common/LeftSide'
 import MainBoard from './components/common/MainBoard'
 
+import indexRoutes from './routes'
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       </div>
       <Footer />
     </div>
+    
   );
 }
 

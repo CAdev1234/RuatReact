@@ -9,9 +9,12 @@ const Component16 = () => {
                             grid-cols-1 lg:grid-cols-2">
                 <div className="flex flex-col">
                     <div className="my-auto">
-                    <div className="font-semibold text-22px text-c_6E7582">Tempor incidid unt ut labore et dolore.</div>
-                    <div className="text-4xl font-semibold leading-normal text-black dark:text-white">Unt ut labore et dolore</div>
-                    <div className="text-sm text-c_6E7582 max-w-sm">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+                    <div className="font-semibold text-c_6E7582
+                                    text-lg sm:text-22px">Tempor incidid unt ut labore et dolore.</div>
+                    <div className="font-semibold leading-normal text-black dark:text-white
+                                    text-2xl sm:text-4xl">Unt ut labore et dolore</div>
+                    <div className="text-c_6E7582 max-w-sm
+                                    text-10px sm:text-sm">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
                     <div className="mt-5 flex items-center h-9_5">
                         <input type="text" placeholder="Enter your email address"
                                 className="h-full flex-1 rounded-lg border border-c_E8EBF1 placeholder-c_BCC3CF text-sm flex items-center px-4" />
