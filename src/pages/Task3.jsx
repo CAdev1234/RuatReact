@@ -75,11 +75,11 @@ const Task3 = () => {
             </div>
 
             {/* Component 17 */}
-            {/* <div className="mt-12_5
+            <div className="mt-12_5
                             px-3 sm:px-8">
                 <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 17</div>
                 <Component17 />
-            </div> */}
+            </div>
         </div>
     )
 }
