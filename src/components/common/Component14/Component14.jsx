@@ -66,9 +66,9 @@ const Component14 = () => {
             
 
             {/* table desktop */}
-            <div className="mt-6 overflow-auto w-full
+            <div className="mt-6 overflow-x-auto overflow-y-hidden w-full
                             hidden sm:block">
-                <div className="" style={{width: 1088}}>
+                <div className="" style={{width: 1000}}>
                     <div className="px-3 grid grid-cols-7 border-b border-c_E8EBF1">
                         <div className="text-xs text-black dark:text-white font-semibold flex justify-start py-3">Label 1</div>
                         <div className="text-xs text-black dark:text-white font-semibold flex justify-end py-3">Label 2</div>
@@ -127,7 +127,7 @@ const Component14 = () => {
                     <div>
                         {table_data_li.map((item, index) => {
                             return (
-                                <div>
+                                <div key={`item_${index}`}>
                                     <div className={`px-3 grid grid-cols-3 border-b border-c_E8EBF1 dark:border-dark_0fc9f2 text-black dark:text-white
                                                     ${enableExpand[index] === true ? 'bg-white dark:bg-gray-900' : 'bg-transparent'}`} 
                                         key={`row_${index}`}>

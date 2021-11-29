@@ -172,7 +172,7 @@ module.exports = {
       strokeWidth: {
         '0.5': '0.5',
         '1.5': '1.5',
-       }
+      }
 
     },
   },
