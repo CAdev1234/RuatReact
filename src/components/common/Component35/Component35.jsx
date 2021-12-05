@@ -62,7 +62,7 @@ const Component35 = () => {
                                         h-5_5 sm:h-7_5
                                         w-20 sm:w-27
                                         text-9px sm:text-xs"
-                            option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
+                            option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                             option_li={select_item_li_1} 
                             default_option={select_item_li_1[0]}
                             returnVal={setOption1}
@@ -76,7 +76,7 @@ const Component35 = () => {
                                     h-5_5 sm:h-7_5
                                     w-20 sm:w-27
                                     text-9px sm:text-xs"
-                            option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
+                            option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                             option_li={select_item_li_1} 
                             default_option={select_item_li_1[0]}
                             returnVal={setOption1}
@@ -124,7 +124,7 @@ const Component35 = () => {
                                         h-5_5 sm:h-7_5
                                         w-20 sm:w-27
                                         text-9px sm:text-xs"
-                                option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
+                                option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                                 option_li={select_item_li_1} 
                                 default_option={select_item_li_1[0]}
                                 returnVal={setOption1}
@@ -138,7 +138,7 @@ const Component35 = () => {
                                         h-5_5 sm:h-7_5
                                         w-20 sm:w-27
                                         text-9px sm:text-xs"
-                                option_board_class="bg-c_F8F9FB dark:bg-gray-900 top-8 z-10"
+                                option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                                 option_li={select_item_li_1} 
                                 default_option={select_item_li_1[0]}
                                 returnVal={setOption1}

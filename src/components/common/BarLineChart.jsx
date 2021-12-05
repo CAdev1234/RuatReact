@@ -160,6 +160,10 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
         }
 
         
+    }, [dimensions])
+
+    useEffect(() => {
+
     }, [])
 
     return (

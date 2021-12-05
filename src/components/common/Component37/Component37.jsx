@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import {
-    NavBarCloseIcon,
-    NavBarOpenIcon,
+    FaIndent,
+    FaOutdent,
     BsFullscreen,
     BsDownload,
-    BsChevronDown
 } from '../../icon/IconImage'
 import SelectInput from '../../ui/SelectInput'
 import BarLineChart from '../BarLineChart'
@@ -49,7 +48,7 @@ const Component37 = () => {
     }
 
     return (
-        <div className="items-stretch
+        <div className="items-stretch rounded-lg shadow-card dark:shadow-dark_card
                         block sm:flex">
             {/* navbar */}
             <div className={`${enableNavBar === true ? 'hidden sm:block' : 'hidden'}`}>
@@ -87,18 +86,19 @@ const Component37 = () => {
             </div>
 
             {/* main part */}
-            <div className="flex-1 flex flex-col px-5 py-5 rounded-r-md bg-white dark:bg-transparent shadow-card dark:shadow-dark_card
+            <div className="flex-1 flex flex-col px-5 py-5 
+                        bg-white dark:bg-transparent text-black dark:text-white
                             mt-7_5 sm:mt-0">
                 <div className="flex items-center">
                     <div className="cursor-pointer transform hover:scale-105 ease-out duration-700">
                         {enableNavBar && 
                             <div onClick={() => {navBarHandler()}}>
-                                <NavBarCloseIcon />
+                                <FaOutdent className="text-black dark:text-dark_0fc9f2" />
                             </div>
                         }
                         {!enableNavBar &&
                             <div onClick={() => {navBarHandler()}}>
-                                <NavBarOpenIcon />
+                                <FaIndent className="text-black dark:text-dark_0fc9f2" />
                             </div>
                         }
                     </div>
@@ -108,8 +108,8 @@ const Component37 = () => {
                 <div className="flex items-center mt-8">
                     <div className="font-semibold text-sm">Graph 1</div>
                     <div className="ml-auto flex items-center">
-                        <BsFullscreen className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700" />
-                        <BsDownload className="stroke-1 ml-7 cursor-pointer transform hover:scale-105 ease-out duration-700" />
+                        <BsFullscreen className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
+                        <BsDownload className="stroke-1 ml-7 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
                     </div>
                 </div>
 
@@ -117,14 +117,14 @@ const Component37 = () => {
                     {enableChart && <BarLineChart chart_data={chart_data} enable_chart_option_btn_group={false} />}
                 </div>
 
-                <div className="w-full h-px bg-c_F2F2F2 mt-7 mb-10"></div>
+                <div className="w-full h-px mt-7 mb-10 bg-c_F2F2F2 dark:bg-dark_0fc9f2"></div>
 
 
                 <div className="flex items-center">
                     <div className="font-semibold text-sm">Graph 2</div>
                     <div className="ml-auto flex items-center">
-                        <BsFullscreen className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700" />
-                        <BsDownload className="stroke-1 ml-7 cursor-pointer transform hover:scale-105 ease-out duration-700" />
+                        <BsFullscreen className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
+                        <BsDownload className="stroke-1 ml-7 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
                     </div>
                 </div>
 
@@ -133,7 +133,7 @@ const Component37 = () => {
                 </div>
 
 
-                <div className="w-full h-px bg-c_F2F2F2 mt-14 mb-10"></div>
+                <div className="w-full h-px mt-14 mb-10 bg-c_F2F2F2 dark:bg-dark_0fc9f2"></div>
 
                 <div className="flex flex-col">
                     <div className="font-semibold

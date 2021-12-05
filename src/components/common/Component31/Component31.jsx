@@ -134,7 +134,6 @@ const Component31 = () => {
                                                 <FaCaretUp className={`${item.item6 > 0 ? 'block' : 'hidden'}`}/>
                                                 <div>{Math.abs(item.item6)}%</div>
                                             </div>
-                                            {/* <DynamicLineChart className="flex-1 h-7_5" line_color={item.d7 > 0 ? '#64A879' : 'C85151'}/> */}
                                             <div className="flex-1 flex items-center justify-center">
                                                 <div className="font-medium text-right">${Number(item.item7).toLocaleString()}</div>
                                                 <div className={`ml-7 w-5 h-5 rounded-full flex flex-col ${enableExpand[index] ? 'bg-c_1564C0 dark:bg-dark_0fc9f2' : 'bg-white border border-c_1564C0'}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {
-    NavBarCloseIcon,
-    NavBarOpenIcon,
+    FaOutdent,
+    FaIndent,
     BsDownload,
 } from '../../icon/IconImage'
 import SelectInput from '../../ui/SelectInput'
@@ -37,7 +37,7 @@ const Component39 = () => {
     }
 
     return (
-        <div className="items-stretch
+        <div className="items-stretch rounded-lg shadow-card dark:shadow-dark_card
                         block sm:flex">
             {/* navbar */}
             <div className={`${enableNavBar === true ? 'hidden sm:block' : 'hidden'}`}>
@@ -75,18 +75,19 @@ const Component39 = () => {
             </div>
 
             {/* main part */}
-            <div className="flex-1 flex flex-col px-5 py-5 rounded-r-md bg-white dark:bg-transparent shadow-card dark:shadow-dark_card
-                            mt-7_5 sm:mt-0">
+            <div className="flex-1 flex flex-col px-5 py-5 
+                        bg-white dark:bg-transparent text-black dark:text-white
+                        mt-7_5 sm:mt-0">
                 <div className="flex items-center">
                     <div className="cursor-pointer transform hover:scale-105 ease-out duration-700">
                         {enableNavBar && 
                             <div onClick={() => {navBarHandler()}}>
-                                <NavBarCloseIcon />
+                                <FaOutdent className="text-black dark:text-dark_0fc9f2" />
                             </div>
                         }
                         {!enableNavBar &&
                             <div onClick={() => {navBarHandler()}}>
-                                <NavBarOpenIcon />
+                                <FaIndent className="text-black dark:text-dark_0fc9f2" />
                             </div>
                         }
                     </div>
@@ -96,7 +97,7 @@ const Component39 = () => {
                 <div className="flex items-center mt-8">
                     <div className="font-semibold text-sm">Sed ut perspiciatis unde omnis</div>
                     <div className="ml-auto">
-                        <BsDownload className="stroke-1" />
+                        <BsDownload className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
                     </div>
                 </div>
 
@@ -115,13 +116,13 @@ const Component39 = () => {
                 </div>
 
 
-                <div className="w-full h-px bg-c_F2F2F2 mt-9 mb-10"></div>
+                <div className="w-full h-px mt-9 mb-10 bg-c_F2F2F2 dark:bg-dark_0fc9f2"></div>
 
 
                 <div className="flex items-center">
                     <div className="font-semibold text-sm">Sed ut perspiciatis unde omnis</div>
                     <div className="ml-auto">
-                        <BsDownload className="stroke-1" />
+                        <BsDownload className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
                     </div>
                 </div>
 
