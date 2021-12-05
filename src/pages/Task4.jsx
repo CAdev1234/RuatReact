@@ -14,33 +14,33 @@ const Task4 = () => {
     return (
         <div>
             {/* Component 31 */}
-            {/* <div className="mt-12_5
+            <div className="mt-12_5
                             px-3 sm:px-8">
                 <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 31</div>
                 <Component31 />
-            </div> */}
+            </div>
 
 
             {/* Component 32 */}
-            {/* <div className="mt-12_5
+            <div className="mt-12_5
                             px-3 sm:px-8">
                 <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 32</div>
                 <Component32 />
-            </div> */}
+            </div>
 
             {/* Component 33 */}
-            {/* <div className="mt-12_5
+            <div className="mt-12_5
                             px-3 sm:px-8">
                 <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 33</div>
                 <Component33 />
-            </div> */}
+            </div>
 
             {/* Component 34 */}
-            {/* <div className="mt-12_5
+            <div className="mt-12_5
                             px-3 sm:px-8">
                 <div className="mb-5 text-3xl font-bold text-black dark:text-white">Component 34</div>
                 <Component34 />
-            </div> */}
+            </div>
 
 
             {/* Component 35 */}

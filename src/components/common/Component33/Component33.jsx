@@ -268,7 +268,7 @@ const Component33 = () => {
                     </div>
                 </div>
 
-                <div className="mt-4 rounded-lg pb-8
+                <div className="mt-4 rounded-lg pb-0 lg:pb-8
                             bg-white dark:bg-transparent shadow-card dark:shadow-dark_card">
                     <BarLineChart chart_data={chart_data} enable_chart_option_btn_group={true} />
                     

@@ -79,7 +79,7 @@ const Component39 = () => {
             </div>
             <div className="flex lg:hidden flex-col">
                 <div className="flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -93,7 +93,7 @@ const Component39 = () => {
                     </div>
                 </div>
                 <div className="mt-4 flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Sub-Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Sub-Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5

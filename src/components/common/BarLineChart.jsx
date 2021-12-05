@@ -18,7 +18,7 @@ function debounce(fn, ms) {
 }
 
 
-const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
+const BarLineChart = ({chart_data, enable_chart_option_btn_group, height}) => {
 
     let date_option_li = [
         {title: '24h', value: '24h'},
@@ -172,11 +172,17 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
     }, [])
 
     return (
-        <div className="flex flex-col">
-            {/* <div id={chartID} className="w-full" style={{height: 500}}></div> */}
-            <div className="aspect-w-9 aspect-h-4">
-                <div id={chartID} className="w-full h-full"></div>
-            </div>
+        <div className="flex flex-col py-5 sm:py-0">
+            {!height &&
+                <div className="aspect-w-9 aspect-h-4">
+                    <div id={chartID} 
+                        className="w-full h-full"></div>
+                </div>
+            }
+
+            {height && 
+                <div id={chartID} style={{height: height}}></div>
+            }
             
             <div className="flex items-center px-2">
                 {enable_chart_option_btn_group &&
@@ -201,9 +207,10 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
                     {date_option_li.map((item, index) => {
                         return (
                             <button key={`date_option_${index}`} 
-                                className={`flex items-center justify-center rounded-full font-semibold px-4 ${enableDateOption[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black dark:text-white'}
+                                className={`flex items-center justify-center rounded-full font-semibold ${enableDateOption[index] === true ? 'bg-c_1564C0 dark:bg-dark_0fc9f2 text-white' : 'text-black dark:text-white'}
                                             cursor-pointer transform hover:scale-105 ease-out duration-700
-                                            h-7_5
+                                            h-6 sm:h-7_5
+                                            px-3 sm:px-4
                                             text-xs sm:text-sm`}
                                 onClick={() => {updateChartByDateHandler(index)}}>{item.title}</button>
                         )

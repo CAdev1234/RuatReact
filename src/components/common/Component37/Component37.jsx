@@ -88,7 +88,7 @@ const Component37 = () => {
             </div>
             <div className="flex lg:hidden flex-col">
                 <div className="flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -102,7 +102,7 @@ const Component37 = () => {
                     </div>
                 </div>
                 <div className="mt-4 flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Sub-Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Sub-Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -152,10 +152,11 @@ const Component37 = () => {
                     {enableChart && <BarLineChart chart_data={chart_data} enable_chart_option_btn_group={false} />}
                 </div>
 
-                <div className="w-full h-px mt-7 mb-10 bg-c_F2F2F2 dark:bg-dark_0fc9f2"></div>
+                <div className="w-full h-px mt-7 bg-c_F2F2F2 dark:bg-dark_0fc9f2
+                                hidden lg:block"></div>
 
 
-                <div className="flex items-center">
+                <div className="flex items-center mt-10">
                     <div className="font-semibold text-sm">Graph 2</div>
                     <div className="ml-auto flex items-center">
                         <BsFullscreen className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
@@ -169,13 +170,14 @@ const Component37 = () => {
                 </div>
 
 
-                <div className="w-full h-px mt-14 bg-c_F2F2F2 dark:bg-dark_0fc9f2
+                <div className="w-full h-px mt-7 bg-c_F2F2F2 dark:bg-dark_0fc9f2
                                 hidden lg:block"></div>
 
                 <div className="flex flex-col mt-10">
                     <div className="font-semibold
                                     text-lg sm:text-22px">Heading Title</div>
-                    <div className="mt-3 text-sm font-semibold">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
+                    <div className="mt-3 font-semibold
+                                    text-11px sm:text-sm">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
                 </div>
                 
             </div>

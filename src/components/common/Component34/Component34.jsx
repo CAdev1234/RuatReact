@@ -122,9 +122,16 @@ const Component34 = () => {
                         )
                     })}
                 </div>
-                <div className="flex-1 pb-7_5 rounded-md
+                <div className="flex-1 pb-7_5 pt-8 rounded-md
                                 shadow-card dark:shadow-dark_card bg-white dark:bg-transparent
-                                mt-5 sm:mt-0">
+                                mt-5 sm:mt-0
+                                hidden lg:block">
+                    <BarLineChart chart_data={chart_data} enable_chart_option_btn_group={false} height={436}/>
+                </div>
+                <div className="flex-1 rounded-md
+                                shadow-card dark:shadow-dark_card bg-white dark:bg-transparent
+                                mt-5 sm:mt-0
+                                block lg:hidden">
                     <BarLineChart chart_data={chart_data} enable_chart_option_btn_group={false}/>
                 </div>
             </div>

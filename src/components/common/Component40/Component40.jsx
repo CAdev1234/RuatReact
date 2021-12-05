@@ -119,7 +119,7 @@ const Component40 = () => {
             </div>
             <div className="flex lg:hidden flex-col">
                 <div className="flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -133,7 +133,7 @@ const Component40 = () => {
                     </div>
                 </div>
                 <div className="mt-4 flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Sub-Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Sub-Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -170,7 +170,8 @@ const Component40 = () => {
                     <div className="font-semibold text-lg sm:text-22px">Heading Title</div>
                 </div>
 
-                <div className="flex items-center mt-8">
+                <div className="flex items-center
+                                mt-4 sm:mt-8">
                     <div className="font-semibold text-sm">Sed ut perspiciatis unde omnis</div>
                     <div className="ml-auto">
                         <BsDownload className="stroke-1 cursor-pointer transform hover:scale-105 ease-out duration-700 text-black dark:text-dark_0fc9f2" />
@@ -257,7 +258,8 @@ const Component40 = () => {
 
                 {/* mobile design part */}
                 <div className="mt-4_5 flex-col
-                                bg-white lg:bg-transparent
+                                bg-white lg:bg-transparent dark:bg-transparent
+                                shadow-card dark:shadow-dark_card
                                 py-4 lg:py-0
                                 px-2 lg:px-0
                                 rounded-lg lg:rounded-none
@@ -563,7 +565,8 @@ const Component40 = () => {
 
                 {/* mobile design part */}
                 <div className="flex-col mt-5_5
-                                bg-white lg:bg-transparent
+                                shadow-card dark:shadow-dark_card
+                                bg-white lg:bg-transparent dark:bg-transparent
                                 py-4 lg:py-0
                                 px-2 lg:px-0
                                 rounded-lg lg:rounded-none
@@ -667,8 +670,8 @@ const Component40 = () => {
                 </div>
 
                 <div className="mt-5
-                                bg-white lg:bg-transparent
-                                py-4 lg:py-0
+                                bg-white lg:bg-transparent dark:bg-transparent
+                                 shadow-card dark:shadow-dark_card lg:shadow-none
                                 px-2 lg:px-0
                                 rounded-lg lg:rounded-none">
                     {enableChart && <BarLineChart chart_data={chart_data} enable_chart_option_btn_group={false} />}

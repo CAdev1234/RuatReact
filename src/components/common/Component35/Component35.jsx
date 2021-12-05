@@ -105,7 +105,8 @@ const Component35 = () => {
             </div>
 
             <div className="rounded-md shadow-card dark:shadow-dark_card bg-white dark:bg-transparent
-                            mt-7_5">
+                            mt-7_5
+                            py-4 sm:py-0">
                 <BarLinechart2 chart_data={chart_data_1}/>
             </div>
 

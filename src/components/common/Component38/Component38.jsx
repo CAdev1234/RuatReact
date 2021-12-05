@@ -106,7 +106,7 @@ const Component38 = () => {
             </div>
             <div className="flex lg:hidden flex-col">
                 <div className="flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -120,7 +120,7 @@ const Component38 = () => {
                     </div>
                 </div>
                 <div className="mt-4 flex items-center">
-                    <div className="font-semibold text-xs mr-auto">Sub-Category</div>
+                    <div className="font-semibold text-xs mr-auto text-black dark:text-white">Sub-Category</div>
                     <div className="relative flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                 border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
                                 h-6_5 lg:h-7_5
@@ -234,7 +234,7 @@ const Component38 = () => {
 
                 <div className="flex flex-col mt-10">
                     <div className="font-semibold text-lg sm:text-22px">Heading Title</div>
-                    <div className="text-sm font-medium">
+                    <div className="font-medium text-11px sm:text-sm">
                         <p className="mt-3">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione. </p>
                         <p className="mt-6">Voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
                         <p className="mt-6">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
@@ -308,7 +308,7 @@ const Component38 = () => {
                                     onClick={() => {closeChartOptionModalHandler()}}>Close</button>
                         </div>
                         <div className="px-3 mt-4 mb-6 w-full">
-                            <div className="w-full h-px bg-c_E8EBF1"></div>
+                            <div className="w-full h-px bg-c_E8EBF1 dark:bg-dark_0fc9f2"></div>
                         </div>
                         
                         <div className="flex flex-col px-4 w-full gap-y-3">
@@ -372,7 +372,7 @@ const Component38 = () => {
 
                         <div className="mt-16 flex items-center justify-center gap-x-3 h-6_5">
                             <button className="h-full w-20 flex items-center justify-center text-sm font-semibold rounded-full border 
-                                            border-c_1564C0 text-c_1564C0">Clear</button>
+                                            border-c_1564C0 text-c_1564C0 dark:border-dark_0fc9f2 dark:text-dark_0fc9f2">Clear</button>
                             <button className="h-full w-20 flex items-center justify-center text-sm font-semibold rounded-full 
                                             bg-c_1564C0 dark:bg-dark_0fc9f2 text-white"
                                     onClick={() => {selectChartOptionHandler()}}>Ok</button>
