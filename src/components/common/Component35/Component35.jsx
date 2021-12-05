@@ -59,9 +59,9 @@ const Component35 = () => {
                         <SelectInput 
                             className="ml-3 flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                     border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
-                                        h-5_5 sm:h-7_5
-                                        w-20 sm:w-27
-                                        text-9px sm:text-xs"
+                                    h-6_5 lg:h-7_5
+                                    w-20 lg:w-27
+                                    text-xs lg:text-sm"
                             option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                             option_li={select_item_li_1} 
                             default_option={select_item_li_1[0]}
@@ -73,9 +73,9 @@ const Component35 = () => {
                         <SelectInput 
                             className="ml-3 flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                     border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
-                                    h-5_5 sm:h-7_5
-                                    w-20 sm:w-27
-                                    text-9px sm:text-xs"
+                                    h-6_5 lg:h-7_5
+                                    w-20 lg:w-27
+                                    text-xs lg:text-sm"
                             option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                             option_li={select_item_li_1} 
                             default_option={select_item_li_1[0]}
@@ -109,7 +109,8 @@ const Component35 = () => {
                 <BarLinechart2 chart_data={chart_data_1}/>
             </div>
 
-            <div className="mt-22_5 flex flex-col">
+            <div className="flex flex-col
+                            mt-10 lg:mt-22_5">
                 <div className="items-center
                                 block sm:flex">
                     <div className="font-semibold
@@ -121,9 +122,9 @@ const Component35 = () => {
                             <SelectInput 
                                 className="ml-3 flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                         border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
-                                        h-5_5 sm:h-7_5
-                                        w-20 sm:w-27
-                                        text-9px sm:text-xs"
+                                        h-6_5 lg:h-7_5
+                                        w-20 lg:w-27
+                                        text-xs lg:text-sm"
                                 option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                                 option_li={select_item_li_1} 
                                 default_option={select_item_li_1[0]}
@@ -135,9 +136,9 @@ const Component35 = () => {
                             <SelectInput 
                                 className="ml-3 flex items-center px-3 text-c_6E7582 dark:text-dark_0fc9f2 font-semibold border rounded-lg
                                         border-c_E8EBF1 dark:border-dark_0fc9f2 bg-white dark:bg-transparent
-                                        h-5_5 sm:h-7_5
-                                        w-20 sm:w-27
-                                        text-9px sm:text-xs"
+                                        h-6_5 lg:h-7_5
+                                        w-20 lg:w-27
+                                        text-xs lg:text-sm"
                                 option_board_class="bg-white dark:bg-gray-900 top-8 z-10"
                                 option_li={select_item_li_1} 
                                 default_option={select_item_li_1[0]}

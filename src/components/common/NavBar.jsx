@@ -33,7 +33,7 @@ const NavBar = ({navItems}) => {
     }
     
     return (
-        <div className="navbar h-full flex flex-col py-1.5 w-72 text-black dark:text-white bg-white dark:bg-transparent border-r border-c_E8EBF1 dark:border-dark_0fc9f2 dark:border-opacity-60">
+        <div className="navbar h-full flex flex-col py-1.5 w-72 text-black dark:text-white border-r border-c_E8EBF1 dark:border-dark_0fc9f2 dark:border-opacity-60">
             {navItems.map((item, index) => {
                 return (
                     <div className="flex flex-col" key={`item_${index}`}>

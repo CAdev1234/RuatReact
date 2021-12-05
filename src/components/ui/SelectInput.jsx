@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
     FaCaretDown,
-    FaCaretUp
+    FaCaretUp,
+    BsGenderMale,
+    BsGenderFemale,
 } from  '../icon/IconImage'
 import ClickOutside from "./click-outside/click-outside";
 
-import {
-    BsGenderMale,
-    BsGenderFemale,
-} from '../icon/IconImage'
 
 
 // option data type: string or object

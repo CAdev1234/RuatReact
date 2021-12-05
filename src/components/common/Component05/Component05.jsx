@@ -57,7 +57,7 @@ const Component05 = () => {
                                     {item.title}
                                     </div>
                         })}
-                        <button className="font-semibold ml-auto text-sm
+                        <button className="font-semibold ml-auto text-sm cursor-pointer
                                             text-c_1564C0 dark:text-dark_0fc9f2
                                             hidden sm:block">View All</button>
                     </div>

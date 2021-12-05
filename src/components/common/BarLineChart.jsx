@@ -39,8 +39,8 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
     const [enableLine, setEnableLine] = useState(true)
     const [enableBar, setEnableBar] = useState(false)
 
-    const {theme, setTheme} = useContext(ThemeContext)
-
+    const {theme} = useContext(ThemeContext)
+    
     const updateChartByDateHandler = (index) => {
         let new_array = new Array(date_option_li.length).fill(false)
         new_array[index] = true
@@ -63,7 +63,6 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
 
     useEffect(() => {
         const bar_line_chart = window.echarts.init(document.getElementById(chartID))
-        
         let option = {
             color: ['#C85151', '#64A879'],
             tooltip: {
@@ -75,7 +74,7 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
                 }
               }
             },
-            grid: {left: '5%', right: '3%', bottom: '5%', top: '10%'},
+            grid: {left: 40, right: 20, bottom: '5%', top: '5%'},
             xAxis: [
                 {
                     show: false,
@@ -84,7 +83,7 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
                     splitLine: {
                         show: true,
                         lineStyle: {
-                            color: '#C8C8C8'
+                            color: `${theme === 'dark' ? 'rgb(255, 0, 0, 0)' : '#C8C8C8'}`
                         }
                     },
                 },
@@ -93,8 +92,14 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
               {
                 type: 'value',
                 axisLabel: {
-                    color: '#C8C8C8'
-                }
+                    color: `#C8C8C8`
+                },
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: `${theme === 'dark' ? 'rgb(255, 0, 0, 0)' : '#C8C8C8'}`
+                    }
+                },
               }
             ],
             series: [
@@ -130,7 +135,7 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
                     name: 'Bar',
                     type: 'bar',
                     itemStyle: {
-                        color: '#7EAFE8'
+                        color: `${theme === 'dark' ? '#0fc9f2' : '#7EAFE8'}`
                     },
                     data: chart_data.bar_data,
                     emphasis: {
@@ -154,21 +159,25 @@ const BarLineChart = ({chart_data, enable_chart_option_btn_group}) => {
             bar_line_chart.resize()
         }, 1000)
 
+
         window.addEventListener('resize', debouncedHandleResize)
+        document.querySelector('#theme-toggle').addEventListener('click', () => {
+            bar_line_chart.clear()
+            bar_line_chart.setOption(option)
+        })
         return () => {
             window.removeEventListener('resize', debouncedHandleResize)
         }
-
-        
-    }, [dimensions])
-
-    useEffect(() => {
 
     }, [])
 
     return (
         <div className="flex flex-col">
-            <div id={chartID} className="w-full" style={{height: 500}}></div>
+            {/* <div id={chartID} className="w-full" style={{height: 500}}></div> */}
+            <div className="aspect-w-9 aspect-h-4">
+                <div id={chartID} className="w-full h-full"></div>
+            </div>
+            
             <div className="flex items-center px-2">
                 {enable_chart_option_btn_group &&
                     <div className="items-center gap-x-2

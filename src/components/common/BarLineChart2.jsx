@@ -27,7 +27,7 @@ const BarLinechart2 = ({chart_data}) => {
                 trigger: "axis",
                 axisPointer: {type: "shadow", textStyle: {color: "#fff"}},
             },
-            grid: { top: '10%', bottom: '10%', left: '5%', right: '5%' },
+            grid: {left: 40, right: 40, bottom: '10%', top: '10%'},
             xAxis: {
                 data: chart_data.xdata,
                 axisLine: {show: false},
@@ -101,7 +101,11 @@ const BarLinechart2 = ({chart_data}) => {
     }, [])
     return (
         <div>
-            <div id={chartID} className="w-full" style={{height: 400}}></div>
+            {/* <div id={chartID} className="w-full" style={{height: 400}}></div> */}
+            <div className="aspect-w-5 aspect-h-2">
+                <div id={chartID} className="w-full h-full"></div>
+            </div>
+            
         </div>
     )
 }

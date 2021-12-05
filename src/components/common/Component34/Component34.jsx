@@ -29,7 +29,7 @@ const Component34 = () => {
         line2_data: [],
         bar_data: []
     }
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < 50; index++) {
         chart_data.line1_data.push(Math.floor(Math.random() * 350))
         chart_data.line2_data.push(Math.floor(Math.random() * 250))
         chart_data.bar_data.push(Math.floor(Math.random() * 100))
