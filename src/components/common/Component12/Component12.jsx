@@ -15,6 +15,15 @@ const Component12 = () => {
         {title: 'Title 5', value: '11.13%'},
         {title: 'Title 6', value: '13.84%'},
     ]
+    let chart_data = [
+        {x_data: 'Sep 4', y_data: 12},
+        {x_data: 'Sep 5', y_data: 35},
+        {x_data: 'Sep 6', y_data: 9},
+        {x_data: 'Sep 7', y_data: 56},
+        {x_data: 'Sep 8', y_data: 47},
+        {x_data: 'Sep 9', y_data: 23},
+        {x_data: 'Sep 10', y_data: 31},
+    ]
     return (
         <div>
             <div className="flex items-center">
@@ -29,7 +38,7 @@ const Component12 = () => {
             </div>
             <div className="mt-8 rounded-lg
                             bg-white dark:bg-transparent dark:shadow-dark_card">
-                <BarChart />
+                <BarChart chart_data={chart_data}/>
                 <div className="pt-0 sm:pt-7">
                     <div className="h-px bg-c_F2F2F2 w-full
                                     hidden sm:block"></div>

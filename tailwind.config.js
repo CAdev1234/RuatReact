@@ -27,6 +27,9 @@ module.exports = {
         c_C8C8C8: '#C8C8C8',
         c_EBE188: '#EBE188',
         c_F17A13: '#F17A13',
+        c_AADFBA: '#AADFBA',
+        c_E69898: '#E69898',
+
 
         blue_grey: '#607D8B',
         blue_grey_lighten_5: '#ECEFF1',
@@ -146,6 +149,7 @@ module.exports = {
         '42_5': '170px',
         '45': '180px',
         '50': '200px',
+        '66': '264px',
         '75': '300px',
         '81': '324px',
         '90': '360px',

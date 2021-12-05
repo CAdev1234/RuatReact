@@ -95,12 +95,12 @@ const Component14 = () => {
                     </div>
                 </div>
                 
-                <div className="w-full relative mt-12_5 h-7 flex items-center">
+                <div className="w-full relative mt-12_5 flex items-center">
                     <div className="flex flex-col h-full text-xs font-medium leading-normal text-c_6E7582 dark:text-white">
                         <div>* Quis nostrud exercitation ullamco laboris</div>
                         <div>** Quis nostrud exercitation ullamco laboris</div>
                     </div>
-                    <div className="absolute top-0 left-0 w-full h-full flex justify-center transform hover:scale-110 ease-out duration-700">
+                    <div className="absolute top-0 left-0 w-full h-full flex justify-center">
                         <div className="px-3 flex justify-center items-center cursor-pointer text-sm leading-tight rounded-full 
                                         shadow-card dark:shadow-dark_card
                                         bg-white dark:bg-dark_0fc9f2

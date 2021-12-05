@@ -171,14 +171,14 @@ const Component23 = () => {
                         <div className="mt-4 grid grid-cols-4 gap-x-3 mx-auto">
                             <div className="flex flex-col rounded-lg py-4 text-black dark:text-white bg-c_E8EBF1 dark:bg-transparent dark:shadow-dark_card max-w-112px
                                             px-2 sm:px-4">
-                                <img src={TrendingSvg} className="w-9 h-9 mx-auto"></img>
+                                <img src={TrendingSvg} className="w-9 h-9 mx-auto" alt=""></img>
                                 <div className="mt-1.5 mx-auto">27/100</div>
                                 <div className="mt-1.5 mx-auto leading-normal font-semibold text-center
                                                 text-10px sm:text-sm">Trending</div>
                             </div>
                             <div className="flex flex-col max-w-112px rounded-lg py-4 text-black dark:text-white bg-c_E8EBF1 dark:bg-transparent dark:shadow-dark_card
                                             px-2 sm:px-4">
-                                <img src={CrownSvg} className="w-9 h-9 mx-auto"></img>
+                                <img src={CrownSvg} className="w-9 h-9 mx-auto" alt=""></img>
                                 <div className="mt-1.5 mx-auto">09/100</div>
                                 <div className="mt-1.5 mx-auto leading-normal font-semibold text-center
                                                 text-10px sm:text-sm">Popularity</div>
@@ -228,7 +228,7 @@ const Component23 = () => {
                                                 <MdQuestionAnswer />
                                                 <div className="ml-1.5">{item.question}</div>
                                             </div>
-                                            <img src={CoinSearchSvg} className="ml-auto"></img>
+                                            <img src={CoinSearchSvg} className="ml-auto" alt=""></img>
                                         </div>
                                     </div>
                         })}

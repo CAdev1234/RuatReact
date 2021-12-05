@@ -16,7 +16,7 @@ const Component22 = () => {
             <div className="flex flex-col w-full">
                 <div className="flex items-center w-full px-3">
                     <div className="flex items-center">
-                        <img src={TrendingSvg} className="w-7 h-7"></img>
+                        <img src={TrendingSvg} className="w-7 h-7" alt=""></img>
                         <div className="ml-2 font-bold leading-normal text-lg">Text 1</div>
                     </div>
                     <div className="ml-auto text-c_1564C0 dark:text-dark_0fc9f2 text-sm leading-normal font-semibold">View All</div>
@@ -50,7 +50,7 @@ const Component22 = () => {
             <div className="flex flex-col w-full">
                 <div className="flex items-center w-full px-3">
                     <div className="flex items-center">
-                        <img src={TrendingSvg} className="w-7 h-7"></img>
+                        <img src={TrendingSvg} className="w-7 h-7" alt=""></img>
                         <div className="ml-2 font-bold leading-normal text-lg">Text 3</div>
                     </div>
                     <div className="ml-auto text-c_1564C0 dark:text-dark_0fc9f2 text-sm leading-normal font-semibold">View All</div>

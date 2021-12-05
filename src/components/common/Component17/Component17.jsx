@@ -31,7 +31,7 @@ const Component17 = () => {
                     <div className="">
                         <div className="font-semibold text-black dark:text-white
                                         text-lg sm:text-22px">Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt.</div>
-                        <img className="mt-5 w-full rounded-lg" src="https://www.constructionspecifier.com/wp-content/uploads/2015/08/bigstock-Modern-business-buildings-45559522.jpg" alt="" />
+                        <img className="mt-5 w-full rounded-lg" alt="" src="https://www.constructionspecifier.com/wp-content/uploads/2015/08/bigstock-Modern-business-buildings-45559522.jpg" alt="" />
                         <div className="mt-4 flex items-center">
                             <div className="flex items-center text-c_64A879 text-sm leading-normal">
                                 <IoTrendingUpSharp />
@@ -45,7 +45,7 @@ const Component17 = () => {
                                 <MdQuestionAnswer />
                                 <div className="ml-1.5">06</div>
                             </div>
-                            <img src={CoinSearchSvg} className="ml-auto"></img>
+                            <img src={CoinSearchSvg} className="ml-auto" alt=""></img>
                         </div>   
                     </div>
 
@@ -110,7 +110,7 @@ const Component17 = () => {
                                                     <MdQuestionAnswer />
                                                     <div className="ml-1.5">{item.question}</div>
                                                 </div>
-                                                <img src={CoinSearchSvg} className="ml-auto"></img>
+                                                <img src={CoinSearchSvg} className="ml-auto" alt=""></img>
                                             </div>
                                         </div>
                             })}

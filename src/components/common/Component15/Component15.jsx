@@ -12,8 +12,7 @@ const Component15 = () => {
                             grid-cols-1 lg:grid-cols-2">
                 <div className="flex flex-col rounded-lg cursor-pointer transform hover:scale-105 ease-out duration-700
                                 bg-white dark:bg-gray-900 shadow-card dark:shadow-dark_card">
-                    <img src="https://miro.medium.com/max/2000/1*vNo4etpETf1UOo5LjADylw.png" alt=""
-                        className="rounded-t-lg"/>
+                    <img src="https://miro.medium.com/max/2000/1*vNo4etpETf1UOo5LjADylw.png" alt="" className="rounded-t-lg"/>
                     <div className="px-5 py-3">
                         <div className="font-bold text-xl text-black dark:text-white">Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt.</div>
                         <div className="mt-4 flex items-center">
@@ -29,7 +28,7 @@ const Component15 = () => {
                                 <MdQuestionAnswer />
                                 <div className="ml-1.5">06</div>
                             </div>
-                            <img src={CoinSearchSvg} className="ml-auto"></img>
+                            <img src={CoinSearchSvg} className="ml-auto" alt=""></img>
                         </div>    
                     </div>
                 </div>
@@ -60,7 +59,7 @@ const Component15 = () => {
                                         <MdQuestionAnswer />
                                         <div className="ml-1.5">06</div>
                                     </div>
-                                    <img src={CoinSearchSvg} className="ml-auto"></img>
+                                    <img src={CoinSearchSvg} className="ml-auto" alt=""></img>
                                 </div>
                             </div>
                 })}

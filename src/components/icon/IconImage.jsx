@@ -7,6 +7,8 @@ import CoinSearchSvg from '../../assets/img/coin-search.svg'
 import MaleSvg from '../../assets/img/male-icon.svg'
 import FemaleSvg from '../../assets/img/female-icon.svg'
 import LeftImg from '../../assets/img/left-img.svg'
+import NavBarCloseIcon from './NavBarCloseIcon'
+import NavBarOpenIcon from './NavBarOpenIcon'
 
 import {
     BsTwitter,
@@ -77,6 +79,8 @@ export {
     FemaleSvg,
     MaleSvg,
     LeftImg,
+    NavBarCloseIcon,
+    NavBarOpenIcon,
     
     BsTwitter,
     BsInstagram,

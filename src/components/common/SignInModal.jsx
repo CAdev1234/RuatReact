@@ -29,7 +29,7 @@ const SignInModal = ({cancelSignInModalHandler, openSignUpModalHandler}) => {
     }, [email, password])
 
     return (
-        <div className="absolute top-0 left-0 bg-black bg-opacity-50 dark:bg-opacity-80 w-full h-screen flex flex-col text-black dark:text-white
+        <div className="fixed top-0 left-0 bg-black bg-opacity-50 dark:bg-opacity-80 w-full h-screen flex flex-col text-black dark:text-white z-10
                         px-3 sm:px-0">
             <div className="m-auto w-full max-w-430px pt-7_5 pb-10 px-8 rounded-md
                             bg-c_F8F9FB dark:bg-gray-900 dark:shadow-dark_card">

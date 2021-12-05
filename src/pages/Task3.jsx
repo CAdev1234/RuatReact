@@ -10,9 +10,9 @@ import Component17 from "../components/common/Component17/Component17"
 import Component9 from "../components/common/Component9/Component9"
 
 const Task3 = () => {
-    useEffect(() => {
-        window.alert('My skype id is live:.cid.207e030c4a5056e4')
-    }, [])
+    // useEffect(() => {
+    //     window.alert('My skype id is live:.cid.207e030c4a5056e4')
+    // }, [])
     return (
         <div>
             {/* Component 9 */}

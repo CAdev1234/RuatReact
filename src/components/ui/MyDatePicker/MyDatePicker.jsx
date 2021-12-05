@@ -59,7 +59,6 @@ export default class MyDatePicker extends Component {
         // if(this.state.showDatePicker && !ReactDOM.findDOMNode(this).contains(e.target)) {
         //     this.showDatePicker(false);
         // }
-        console.log("111=", datepickerRef)
         if(this.state.showDatePicker && !datepickerRef.current.contains(e.target)) {
             this.showDatePicker(false);
         }

@@ -20,7 +20,7 @@ const Component04 = () => {
                             bg-white text-black dark:bg-gray-900 dark:text-white
                             shadow-card dark:shadow-dark_card">
                 <div className="flex items-center mb-1">
-                    <img src={TrendingSvg} className="h-5"></img>
+                    <img src={TrendingSvg} className="h-5" alt=""></img>
                     <div className="ml-2 font-semibold
                                     text-base sm:text-lg">Trending</div>
                     <button className="ml-auto font-semibold

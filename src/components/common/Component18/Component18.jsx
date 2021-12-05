@@ -95,7 +95,7 @@ const Component18 = () => {
                                             <MdQuestionAnswer />
                                             <div className="ml-1.5">{item.question}</div>
                                         </div>
-                                        <img src={CoinSearchSvg} className="ml-auto"></img>
+                                        <img src={CoinSearchSvg} className="ml-auto" alt=""></img>
                                     </div>
                                 </div>
                     })}

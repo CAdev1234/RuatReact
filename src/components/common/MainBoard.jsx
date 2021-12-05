@@ -17,6 +17,8 @@ import SignInModal from "./SignInModal"
 import SignUpModal from "./SignUpModal"
 import Task3 from "../../pages/Task3"
 
+import Task4 from "../../pages/Task4"
+
 const MainBoard = () => {
     let menu_li = [
         {title: 'Menu 1', link: ''},
@@ -165,9 +167,10 @@ const MainBoard = () => {
                         })}
                     </div>
                     <Routes>
-                        <Route path="/task1" element={<Task1 />}></Route>
-                        <Route path="/task2" element={<Task2 />}></Route>
-                        <Route path="/task3" element={<Task3 />}></Route>
+                        <Route path="/task1" exact element={<Task1 />}></Route>
+                        <Route path="/task2" exact element={<Task2 />}></Route>
+                        <Route path="/task3" exact element={<Task3 />}></Route>
+                        <Route path="/task4" exact element={<Task4 />}></Route>
                     </Routes>
                 </div>
             </div>
