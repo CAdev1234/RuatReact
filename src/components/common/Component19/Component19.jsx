@@ -22,7 +22,7 @@ const Component19 = () => {
             <div className="flex items-center text-sm leading-tight
                             text-black dark:text-white">
                 <div className="font-bold">Comments 05</div>
-                <div className="ml-auto text-black dark:text-dark_0fc9f2">
+                <div className="ml-auto text-black dark:text-dark_0fc9f2 stroke-1">
                     <BsSliders/>
                 </div>
             </div>

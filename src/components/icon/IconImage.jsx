@@ -7,6 +7,9 @@ import CoinSearchSvg from '../../assets/img/coin-search.svg'
 import MaleSvg from '../../assets/img/male-icon.svg'
 import FemaleSvg from '../../assets/img/female-icon.svg'
 import LeftImg from '../../assets/img/left-img.svg'
+import WarnImg from '../../assets/img/warning.svg'
+import BullImg from '../../assets/img/bull.svg'
+import BearImg from '../../assets/img/bear.svg'
 
 import {
     BsTwitter,
@@ -38,6 +41,7 @@ import {
     BsGenderFemale,
     BsFullscreen,
     BsPeopleFill,
+    BsCheck2
 } from 'react-icons/bs'
 
 import {
@@ -79,6 +83,9 @@ export {
     FemaleSvg,
     MaleSvg,
     LeftImg,
+    WarnImg,
+    BullImg,
+    BearImg,
     
     BsTwitter,
     BsInstagram,
@@ -109,6 +116,7 @@ export {
     BsGenderFemale,
     BsFullscreen,
     BsPeopleFill,
+    BsCheck2,
 
 
     FaDiscord,

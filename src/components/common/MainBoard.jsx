@@ -15,9 +15,12 @@ import { ThemeContext } from "../contexts/ThemeContext"
 import ScrollUpBtn from "../ui/ScrollUpBtn"
 import SignInModal from "./SignInModal"
 import SignUpModal from "./SignUpModal"
-import Task3 from "../../pages/Task3"
 
+import Task3 from "../../pages/Task3"
 import Task4 from "../../pages/Task4"
+
+import Task5 from "../../pages/Task5"
+
 
 const MainBoard = () => {
     let menu_li = [
@@ -171,6 +174,7 @@ const MainBoard = () => {
                         <Route path="/task2" exact element={<Task2 />}></Route>
                         <Route path="/task3" exact element={<Task3 />}></Route>
                         <Route path="/task4" exact element={<Task4 />}></Route>
+                        <Route path="/task5" exact element={<Task5 />}></Route>
                     </Routes>
                 </div>
             </div>
